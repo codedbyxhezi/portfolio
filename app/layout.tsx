@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://deine-domain.de"),
+  metadataBase: new URL("https://portfolio-rouge-nine-10.vercel.app/"),
   title: {
     default: "Djezi Zenki | Fullstack Webdeveloper",
     template: "%s | Djezi Zenki",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Djezi Zenki | Fullstack Webdeveloper",
     description:
       "Moderne Webentwicklung mit Next.js, React, TypeScript und sauberem Design.",
-    url: "https://deine-domain.de",
+    url: "https://portfolio-rouge-nine-10.vercel.app/",
     siteName: "Djezi Zenki Portfolio",
     locale: "de_DE",
     type: "website",
