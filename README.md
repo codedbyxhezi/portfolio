@@ -1,32 +1,31 @@
-# Portfolio Next.js
+# Djezi Zenki Portfolio
 
-Portfolio-Webseite mit Next.js, TypeScript, CSS Modules und Komponentenordnern.
+🚀 Live Demo: [Portfolio öffnen](https://portfolio-rouge-nine-10.vercel.app/)
 
-## Starten
+Moderne Portfolio-Webseite mit Next.js, TypeScript, CSS Modules und Framer Motion.
+
+## Features
+
+- Moderne Startseite mit Hero, About, Benefits, Skills, Projects und Contact
+- Unterseiten für About, Skills, Projects und Contact
+- Dynamische Projekt-Detailseiten
+- Responsive Design für Desktop, Tablet und Mobile
+- Animationen mit Framer Motion
+- CSS Modules für komponentenbasierte Styles
+- SEO-Metadaten, Sitemap und Robots
+- Eigenes Favicon und Logo
+- Eigene 404-Seite
+- Scroll-to-Top Button
+
+## Tech Stack
+
+- Next.js
+- TypeScript
+- React
+- CSS Modules
+- Framer Motion
+
+## Installation
 
 ```bash
 npm install
-npm run dev
-```
-
-Danach im Browser öffnen:
-
-```txt
-http://localhost:3000
-```
-
-## Struktur
-
-```txt
-components/Hero/Hero.tsx
-components/Hero/Hero.module.css
-components/Navbar/Navbar.tsx
-components/Navbar/Navbar.module.css
-...
-```
-
-Das Logo liegt unter:
-
-```txt
-public/images/dz-logo.png
-```
