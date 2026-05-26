@@ -2,36 +2,37 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio-rouge-nine-10.vercel.app/"),
+  metadataBase: new URL("https://DEINE-VERCEL-URL.vercel.app"),
   title: {
-    default: "Djezi Zenki | Fullstack Webdeveloper",
-    template: "%s | Djezi Zenki",
+    default: "Zemax Digital | Digital Web Studio",
+    template: "%s | Zemax Digital",
   },
   description:
-    "Portfolio von Djezi Zenki, Fullstack Webdeveloper für moderne, schnelle und responsive Websites mit Next.js, React und TypeScript.",
+    "Zemax Digital entwickelt moderne, schnelle und responsive Websites mit Next.js, React und TypeScript.",
   keywords: [
-    "Djezi Zenki",
-    "Fullstack Webdeveloper",
-    "Frontend Developer",
+    "Zemax Digital",
+    "Digital Web Studio",
+    "Webdesign",
+    "Webentwicklung",
+    "Digital Web Studio",
     "Next.js Entwickler",
     "React Entwickler",
     "TypeScript",
     "Portfolio",
-    "Webentwicklung",
   ],
-  authors: [{ name: "Djezi Zenki" }],
-  creator: "Djezi Zenki",
-  publisher: "Djezi Zenki",
+  authors: [{ name: "Zemax Digital" }],
+  creator: "Zemax Digital",
+  publisher: "Zemax Digital",
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: "Djezi Zenki | Fullstack Webdeveloper",
+    title: "Zemax Digital | Digital Web Studio",
     description:
       "Moderne Webentwicklung mit Next.js, React, TypeScript und sauberem Design.",
-    url: "https://portfolio-rouge-nine-10.vercel.app/",
-    siteName: "Djezi Zenki Portfolio",
+    url: "https://DEINE-VERCEL-URL.vercel.app",
+    siteName: "Zemax Digital",
     locale: "de_DE",
     type: "website",
     images: [
@@ -39,15 +40,15 @@ export const metadata: Metadata = {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Djezi Zenki Portfolio",
+        alt: "Zemax Digital Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Djezi Zenki | Fullstack Webdeveloper",
+    title: "Zemax Digital | Digital Web Studio",
     description:
-      "Portfolio von Djezi Zenki mit modernen Webprojekten, Skills und Kontakt.",
+      "Portfolio von Zemax Digital mit modernen Webprojekten, Skills und Kontakt.",
     images: ["/images/og-image.png"],
   },
   icons: {

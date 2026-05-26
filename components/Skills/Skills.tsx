@@ -26,11 +26,11 @@ export default function Skills() {
         >
           <span className={styles.badge}>Skills</span>
 
-          <h2>Mein Stack für moderne Websites.</h2>
+          <h2>Unser Stack für moderne Websites.</h2>
 
           <p>
-            Eine kompakte Auswahl der Technologien, mit denen ich schnelle,
-            responsive und professionelle Webprojekte umsetze.
+            Eine kompakte Auswahl der Technologien, mit denen Zemax Digital
+            schnelle, responsive und professionelle Webprojekte umsetzt.
           </p>
 
           <Link href="/skills" className={styles.button}>

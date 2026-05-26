@@ -25,16 +25,17 @@ export default function Contact() {
           <span className={styles.badge}>Kontakt</span>
 
           <h2 className="sectionTitle">
-            Lass uns dein nächstes Projekt starten.
+            Lass uns gemeinsam dein nächstes Projekt starten.
           </h2>
 
           <p className="sectionText">
-            Schreib mir kurz, worum es geht. Ich melde mich schnellstmöglich bei dir.
+            Schreib uns kurz, worum es geht. Zemax Digital meldet sich
+            schnellstmöglich bei dir zurück.
           </p>
 
           <div className={styles.info}>
             <a href="mailto:djezi.zenki@outlook.de">djezi.zenki@outlook.de</a>
-            <span>Available for freelance projects</span>
+            <span>Verfügbar für Webdesign & Webentwicklung</span>
           </div>
         </div>
 
@@ -48,7 +49,13 @@ export default function Contact() {
         >
           <div className={styles.formGroup}>
             <label htmlFor="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Dein Name" required />
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Dein Name"
+              required
+            />
           </div>
 
           <div className={styles.formGroup}>
@@ -67,7 +74,7 @@ export default function Contact() {
             <textarea
               id="message"
               name="message"
-              placeholder="Erzähl mir kurz von deinem Projekt..."
+              placeholder="Erzähl uns kurz von deinem Projekt..."
               rows={5}
               required
             />

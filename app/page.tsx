@@ -10,7 +10,7 @@ import ScrollToTop from "@/components/ScrollToTop/ScrollToTop";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Djezi Zenki | Fullstack Webdeveloper",
+  title: "Zemax Digital | Digital Web Studio",
 };
 
 export default function HomePage() {

@@ -7,7 +7,7 @@ import styles from "./SkillsPage.module.css";
 export const metadata = {
   title: "Skills",
   description:
-    "Skills und Technologien von Djezi Zenki: Next.js, React, TypeScript, CSS Modules, Framer Motion und moderne Webentwicklung.",
+    "Skills und Technologien von Zemax Digital: Next.js, React, TypeScript, CSS Modules, Framer Motion und moderne Webentwicklung.",
 };
 
 export default function SkillsPage() {

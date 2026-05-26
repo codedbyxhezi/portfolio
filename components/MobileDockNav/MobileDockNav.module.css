@@ -24,18 +24,29 @@
     left: 0;
     right: 0;
     bottom: 94px;
-    overflow: hidden;
+    max-height: min(70vh, 560px);
+    overflow-y: auto;
+    overflow-x: hidden;
     padding: 18px;
     border-radius: 32px;
     border: 1px solid rgba(148, 163, 184, 0.2);
     background:
-      linear-gradient(135deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.04)),
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.105),
+        rgba(255, 255, 255, 0.04)
+      ),
       rgba(7, 11, 24, 0.78);
     backdrop-filter: blur(24px);
     box-shadow:
       0 28px 90px rgba(0, 0, 0, 0.48),
       0 0 45px rgba(56, 189, 248, 0.16),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    scrollbar-width: none;
+  }
+
+  .menuPanel::-webkit-scrollbar {
+    display: none;
   }
 
   .menuPanel::before {
@@ -99,6 +110,14 @@
     font-size: 1.4rem;
     line-height: 1;
     background: rgba(255, 255, 255, 0.07);
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .menuHeader button:hover {
+    background: rgba(56, 189, 248, 0.13);
+    transform: rotate(90deg);
   }
 
   .menuList {
@@ -184,7 +203,11 @@
     border-radius: 999px;
     border: 1px solid rgba(148, 163, 184, 0.2);
     background:
-      linear-gradient(135deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.04)),
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.11),
+        rgba(255, 255, 255, 0.04)
+      ),
       rgba(7, 11, 24, 0.78);
     backdrop-filter: blur(24px);
     box-shadow:
@@ -199,7 +222,11 @@
     inset: -1px;
     border-radius: inherit;
     pointer-events: none;
-    background: linear-gradient(135deg, rgba(56, 189, 248, 0.55), rgba(139, 92, 246, 0.55));
+    background: linear-gradient(
+      135deg,
+      rgba(56, 189, 248, 0.55),
+      rgba(139, 92, 246, 0.55)
+    );
     opacity: 0.32;
     z-index: -1;
     filter: blur(8px);

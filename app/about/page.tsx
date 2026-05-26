@@ -4,9 +4,9 @@ import ScrollToTop from "@/components/ScrollToTop/ScrollToTop";
 import styles from "./AboutPage.module.css";
 
 export const metadata = {
-  title: "Über mich",
+  title: "Über uns",
   description:
-    "Mehr über Djezi Zenki, Fullstack Webdeveloper mit Fokus auf Next.js, React und TypeScript.",
+    "Mehr über Zemax Digital, ein Digital Web Studio für moderne Websites, Webdesign und Webentwicklung.",
 };
 
 export default function AboutPage() {
@@ -16,14 +16,14 @@ export default function AboutPage() {
       <main className={styles.page}>
         <section className={styles.hero}>
           <div className="container">
-            <span className={styles.badge}>Über mich</span>
+            <span className={styles.badge}>Über uns</span>
             <h1>
-              Ich entwickle digitale Produkte mit Fokus auf Design, Performance
-              und sauberem Code.
+              Wir entwickeln digitale Lösungen, die modern aussehen und sauber
+              funktionieren.
             </h1>
             <p>
-              Mein Ziel ist es, Websites zu bauen, die nicht nur modern aussehen,
-              sondern auch schnell, responsive und einfach nutzbar sind.
+              Zemax Digital ist ein modernes Digital Web Studio mit Fokus auf
+              starke Websites, klare Nutzerführung und performante Umsetzung.
             </p>
           </div>
         </section>
@@ -31,28 +31,30 @@ export default function AboutPage() {
         <section className={styles.contentSection}>
           <div className={`container ${styles.grid}`}>
             <div className={styles.card}>
-              <h2>Wer ich bin</h2>
+              <h2>Wer wir sind</h2>
               <p>
-                Ich bin Djezi Zenki, Fullstack Webdeveloper. Ich arbeite gerne
-                mit modernen Technologien wie Next.js, React, TypeScript und CSS
-                Modules.
+                Zemax Digital steht für moderne Webentwicklung, sauberes Design
+                und digitale Auftritte, die professionell wirken. Unser Ziel ist
+                es, Websites zu bauen, die Vertrauen schaffen und technisch
+                zuverlässig sind.
               </p>
             </div>
 
             <div className={styles.card}>
-              <h2>Wie ich arbeite</h2>
+              <h2>Wie wir arbeiten</h2>
               <p>
-                Ich achte auf klare Strukturen, wiederverwendbare Komponenten,
-                saubere UI, Performance und gute Nutzererfahrung auf allen
-                Geräten.
+                Wir setzen auf klare Strukturen, wiederverwendbare Komponenten,
+                responsive Layouts und sauberen Code. Jede Website soll leicht
+                verständlich, schnell und langfristig erweiterbar bleiben.
               </p>
             </div>
 
             <div className={styles.card}>
-              <h2>Mein Fokus</h2>
+              <h2>Unser Fokus</h2>
               <p>
-                Portfolio-Websites, Landing Pages, Business-Websites,
-                Web-Apps und moderne Frontend-Lösungen.
+                Wir konzentrieren uns auf Portfolio-Websites, Landing Pages,
+                Business-Websites und moderne Web-Apps mit Next.js, React,
+                TypeScript und CSS Modules.
               </p>
             </div>
           </div>

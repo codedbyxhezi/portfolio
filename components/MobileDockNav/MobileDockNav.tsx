@@ -9,14 +9,20 @@ import styles from "./MobileDockNav.module.css";
 
 const navItems = [
   {
-    label: "Über mich",
-    description: "Wer ich bin",
+    label: "Startseite",
+    description: "Zurück nach Hause",
+    href: "/",
+    icon: "⌂",
+  },
+  {
+    label: "Über uns",
+    description: "Wer wir sind",
     href: "/about",
-    icon: "👤",
+    icon: "👥",
   },
   {
     label: "Skills",
-    description: "Mein Tech-Stack",
+    description: "Unser Tech-Stack",
     href: "/skills",
     icon: "</>",
   },
@@ -28,7 +34,7 @@ const navItems = [
   },
   {
     label: "Kontakt",
-    description: "Lass uns sprechen",
+    description: "Projekt anfragen",
     href: "/contact",
     icon: "✉",
   },
@@ -43,7 +49,11 @@ export default function MobileDockNav() {
   }
 
   function isActive(href: string) {
-    return pathname === href;
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`);
   }
 
   return (
@@ -108,14 +118,14 @@ export default function MobileDockNav() {
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
         <Link
-          href="/about"
+          href="/"
           onClick={closeMenu}
           className={`${styles.dockItem} ${
-            pathname === "/about" ? styles.activeDockItem : ""
+            pathname === "/" ? styles.activeDockItem : ""
           }`}
         >
-          <span>👤</span>
-          <small>About</small>
+          <span>⌂</span>
+          <small>Home</small>
         </Link>
 
         <Link
@@ -131,14 +141,16 @@ export default function MobileDockNav() {
 
         <motion.button
           type="button"
-          className={`${styles.centerButton} ${isOpen ? styles.centerButtonOpen : ""}`}
+          className={`${styles.centerButton} ${
+            isOpen ? styles.centerButtonOpen : ""
+          }`}
           onClick={() => setIsOpen((current) => !current)}
           aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
           whileTap={{ scale: 0.92 }}
         >
           <Image
-            src="/images/dz-logo.png"
-            alt="Djezi Zenki Logo"
+            src="/images/zemax-logo.png"
+            alt="Zemax Digital Logo"
             width={64}
             height={64}
             className={styles.centerLogo}
@@ -155,7 +167,7 @@ export default function MobileDockNav() {
           }`}
         >
           <span>▣</span>
-          <small>Projects</small>
+          <small>Projekte</small>
         </Link>
 
         <Link
@@ -166,7 +178,7 @@ export default function MobileDockNav() {
           }`}
         >
           <span>✉</span>
-          <small>Contact</small>
+          <small>Kontakt</small>
         </Link>
       </motion.nav>
     </div>

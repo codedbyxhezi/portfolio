@@ -8,7 +8,7 @@ import styles from "./ProjectsPage.module.css";
 export const metadata = {
   title: "Projekte",
   description:
-    "Ausgewählte Webprojekte von Djezi Zenki mit Next.js, React, TypeScript und modernem Design.",
+    "Ausgewählte Webprojekte von Zemax Digital mit Next.js, React, TypeScript und modernem Design.",
 };
 
 export default function ProjectsPage() {

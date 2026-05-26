@@ -12,15 +12,15 @@ const stats = [
 const highlights = [
   {
     title: "Modernes Frontend",
-    text: "Ich baue klare, performante Interfaces mit React, Next.js und TypeScript.",
+    text: "Wir entwickeln klare, performante Interfaces mit React, Next.js und TypeScript.",
   },
   {
     title: "Saubere Struktur",
-    text: "Komponenten, Daten und Styles sind logisch getrennt und leicht wartbar.",
+    text: "Komponenten, Daten und Styles werden logisch getrennt und leicht wartbar aufgebaut.",
   },
   {
     title: "Responsive Design",
-    text: "Layouts funktionieren sauber auf Desktop, Tablet und Smartphone.",
+    text: "Unsere Layouts funktionieren sauber auf Desktop, Tablet und Smartphone.",
   },
 ];
 
@@ -35,16 +35,16 @@ export default function About() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.65 }}
         >
-          <span className={styles.badge}>Über mich</span>
+          <span className={styles.badge}>Über uns</span>
 
           <h2>
-            Ich entwickle Websites, die hochwertig aussehen und technisch sauber
-            aufgebaut sind.
+            Wir entwickeln Websites, die hochwertig aussehen und technisch
+            sauber aufgebaut sind.
           </h2>
 
           <p>
-            Als Fullstack Webdeveloper verbinde ich modernes Design mit sauberem
-            Code. Mein Fokus liegt auf schnellen, responsiven und professionellen
+            Zemax Digital verbindet modernes Design mit sauberem Code. Unser
+            Fokus liegt auf schnellen, responsiven und professionellen
             Weblösungen, die Nutzer sofort verstehen.
           </p>
 
@@ -80,10 +80,10 @@ export default function About() {
             </div>
 
             <div className={styles.profile}>
-              <div className={styles.avatar}>DZ</div>
+              <div className={styles.avatar}>XZ</div>
               <div>
-                <strong>Djezi Zenki</strong>
-                <p>Fullstack Webdeveloper</p>
+                <strong>Zemax Digital</strong>
+                <p>Digital Web Studio</p>
               </div>
             </div>
 
@@ -96,7 +96,7 @@ export default function About() {
           </div>
 
           <div className={styles.floatingCard}>
-            <strong>Focus</strong>
+            <strong>Fokus</strong>
             <span>Design × Code × Performance</span>
           </div>
         </motion.div>

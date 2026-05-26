@@ -35,8 +35,8 @@ export default function Navbar() {
               transition={{ type: "spring", stiffness: 260, damping: 15 }}
             >
               <Image
-                src="/images/dz-logo.png"
-                alt="Djezi Zenki Logo"
+                src="/images/zemax-logo.png"
+                alt="Zemax Digital Logo"
                 width={72}
                 height={72}
                 priority
@@ -45,9 +45,9 @@ export default function Navbar() {
             </motion.div>
 
             <div className={styles.brandText}>
-              <span>Djezi Zenki</span>
-              <small>Fullstack Webdeveloper</small>
-            </div>
+            <span>Zemax Digital</span>
+            <small>Digital Web Studio</small>
+</div>
           </Link>
 
           <div className={styles.navCenter}>

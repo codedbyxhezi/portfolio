@@ -6,10 +6,11 @@ import { motion } from "framer-motion";
 import styles from "./Footer.module.css";
 
 const navLinks = [
-  { label: "Über mich", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projekte", href: "#projects" },
-  { label: "Kontakt", href: "#contact" },
+  { label: "Startseite", href: "/" },
+  { label: "Über uns", href: "/about" },
+  { label: "Skills", href: "/skills" },
+  { label: "Projekte", href: "/projects" },
+  { label: "Kontakt", href: "/contact" },
 ];
 
 const socialLinks = [
@@ -25,7 +26,7 @@ const socialLinks = [
   },
   {
     label: "E-Mail",
-    href: "mailto:djezi.zenki@web.de",
+    href: "mailto:djezi.zenki@outlook.de",
     text: "Nachricht senden",
   },
 ];
@@ -46,14 +47,19 @@ export default function Footer() {
         <span className={styles.badge}>Bereit für dein Projekt?</span>
 
         <h2>
-          Lass uns etwas bauen, das modern aussieht und richtig gut funktioniert.
+          Lass uns gemeinsam etwas bauen, das modern aussieht und zuverlässig
+          funktioniert.
         </h2>
 
         <div className={styles.ctaActions}>
-          <Link href="#contact" className={styles.primaryButton}>
+          <Link href="/contact" className={styles.primaryButton}>
             Projekt anfragen
           </Link>
-          <a href="mailto:djezi.zenki@web.de" className={styles.secondaryButton}>
+
+          <a
+            href="mailto:djezi.zenki@outlook.de"
+            className={styles.secondaryButton}
+          >
             E-Mail schreiben
           </a>
         </div>
@@ -67,29 +73,30 @@ export default function Footer() {
         transition={{ duration: 0.65, delay: 0.1 }}
       >
         <div className={styles.brand}>
-          <Link href="#home" className={styles.logoWrap}>
+          <Link href="/" className={styles.logoWrap}>
             <Image
-              src="/images/dz-logo.png"
-              alt="Djezi Zenki Logo"
+              src="/images/zemax-logo.png"
+              alt="Zemax Digital Logo"
               width={74}
               height={74}
               className={styles.logo}
             />
 
             <div>
-              <h3>Djezi Zenki</h3>
-              <p>Fullstack Webdeveloper</p>
+              <h3>Zemax Digital</h3>
+              <p>Digital Web Studio</p>
             </div>
           </Link>
 
           <p className={styles.brandText}>
-            Ich entwickle moderne, schnelle und responsive Websites mit Fokus
+            Wir entwickeln moderne, schnelle und responsive Websites mit Fokus
             auf Design, Performance und sauberer Umsetzung.
           </p>
         </div>
 
         <div className={styles.footerColumn}>
           <h4>Navigation</h4>
+
           <div className={styles.navList}>
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
@@ -101,6 +108,7 @@ export default function Footer() {
 
         <div className={styles.footerColumn}>
           <h4>Connect</h4>
+
           <div className={styles.socialGrid}>
             {socialLinks.map((link) => (
               <motion.a
@@ -121,8 +129,11 @@ export default function Footer() {
       </motion.div>
 
       <div className={`container ${styles.bottomBar}`}>
-        <span>© {new Date().getFullYear()} Djezi Zenki. Alle Rechte vorbehalten.</span>
-        <Link href="#home">Zurück nach oben ↑</Link>
+        <span>
+          © {new Date().getFullYear()} Zemax Digital. Alle Rechte vorbehalten.
+        </span>
+
+        <Link href="/">Zurück zur Startseite ↑</Link>
       </div>
     </footer>
   );

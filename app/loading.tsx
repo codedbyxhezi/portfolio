@@ -6,8 +6,8 @@ export default function Loading() {
     <div className={styles.loading}>
       <div className={styles.logoWrap}>
         <Image
-          src="/images/dz-logo.png"
-          alt="Djezi Zenki Logo"
+          src="/images/zemax-logo.png"
+          alt="Zemax Digital Logo"
           width={92}
           height={92}
           className={styles.logo}

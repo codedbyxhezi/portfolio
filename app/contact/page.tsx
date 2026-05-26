@@ -7,7 +7,7 @@ import styles from "./ContactPage.module.css";
 export const metadata = {
   title: "Kontakt",
   description:
-    "Kontaktiere Djezi Zenki für moderne Websites, Web-Apps und Fullstack-Webentwicklung.",
+    "Kontaktiere Zemax Digital für moderne Websites, Web-Apps und Fullstack-Webentwicklung.",
 };
 
 export default function ContactPage() {

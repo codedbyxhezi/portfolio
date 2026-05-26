@@ -1,4 +1,4 @@
-# Djezi Zenki Portfolio
+# Zemax Digital Portfolio
 
 🚀 Live Demo: [Portfolio öffnen](https://portfolio-rouge-nine-10.vercel.app/)
 

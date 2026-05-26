@@ -49,7 +49,7 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.15 }}
           >
-            Fullstack Webdeveloper
+            Zemax Digital · Digital Web Studio
           </motion.div>
 
           <motion.h1
@@ -59,7 +59,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.25 }}
           >
             Moderne Websites.
-            <span> Sauberer Code.</span>
+            <span> Digitale Lösungen.</span>
           </motion.h1>
 
           <motion.p
@@ -68,8 +68,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.38 }}
           >
-            Ich entwickle schnelle, responsive und professionelle Weblösungen
-            mit Next.js, React und TypeScript.
+            Wir entwickeln schnelle, responsive und professionelle Weblösungen
+            mit Fokus auf Design, Performance und sauberer Umsetzung.
           </motion.p>
 
           <motion.div
@@ -93,7 +93,7 @@ export default function Hero() {
               whileHover={{ y: -4, scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              Kontakt
+              Kontakt aufnehmen
             </motion.a>
           </motion.div>
         </motion.div>
@@ -105,7 +105,7 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.35 }}
         >
           <motion.div
-            className={styles.profileCard}
+            className={styles.showcaseCard}
             animate={{
               y: [0, -14, 0],
               rotate: [0, 1.2, 0],
@@ -116,56 +116,63 @@ export default function Hero() {
               ease: "easeInOut",
             }}
           >
-            <div className={styles.cardTop}>
-              <div>
-                <span className={styles.cardLabel}>Currently building</span>
-                <h3>Premium Web Experiences</h3>
+            <div className={styles.browserTop}>
+              <div className={styles.browserDots}>
+                <span />
+                <span />
+                <span />
               </div>
-              <div className={styles.statusDot} />
+
+              <span className={styles.browserUrl}>zemax.digital</span>
             </div>
 
-            <div className={styles.lines}>
-              <span />
-              <span />
-              <span />
+            <div className={styles.showcaseHeader}>
+              <span className={styles.logoMark}>XZ</span>
+
+              <div>
+                <span className={styles.cardLabel}>Digital Web Studio</span>
+                <h3>Launch-ready Websites</h3>
+              </div>
             </div>
 
-            <div className={styles.techGrid}>
-              <motion.div whileHover={{ scale: 1.08 }}>Next.js</motion.div>
-              <motion.div whileHover={{ scale: 1.08 }}>React</motion.div>
-              <motion.div whileHover={{ scale: 1.08 }}>TypeScript</motion.div>
-              <motion.div whileHover={{ scale: 1.08 }}>CSS Modules</motion.div>
+            <div className={styles.previewBlock}>
+              <div className={styles.previewLineLarge} />
+              <div className={styles.previewLineSmall} />
+
+              <div className={styles.previewGrid}>
+                <div>
+                  <strong>UI</strong>
+                  <span>Modernes Design</span>
+                </div>
+
+                <div>
+                  <strong>SEO</strong>
+                  <span>Saubere Struktur</span>
+                </div>
+
+                <div>
+                  <strong>UX</strong>
+                  <span>Klare Nutzerführung</span>
+                </div>
+              </div>
             </div>
-          </motion.div>
 
-          <motion.div
-            className={styles.floatingTag}
-            animate={{
-              y: [0, 18, 0],
-              x: [0, -8, 0],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            Clean UI
-          </motion.div>
+            <div className={styles.metricRow}>
+              <div>
+                <strong>100%</strong>
+                <span>Responsive</span>
+              </div>
 
-          <motion.div
-            className={styles.floatingTagTwo}
-            animate={{
-              y: [0, -18, 0],
-              x: [0, 10, 0],
-            }}
-            transition={{
-              duration: 4.8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            Fast Performance
+              <div>
+                <strong>SEO</strong>
+                <span>Ready</span>
+              </div>
+
+              <div>
+                <strong>Fast</strong>
+                <span>Performance</span>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </div>

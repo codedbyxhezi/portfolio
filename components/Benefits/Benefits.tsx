@@ -17,7 +17,7 @@ const benefits = [
   {
     number: "03",
     title: "Responsive auf jedem Gerät",
-    text: "Deine Website funktioniert sauber auf Desktop, Tablet und Smartphone.",
+    text: "Websites funktionieren sauber auf Desktop, Tablet und Smartphone.",
   },
   {
     number: "04",
@@ -36,7 +36,7 @@ export default function Benefits() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Warum mit mir?
+          Warum Zemax Digital?
         </motion.span>
 
         <motion.h2
@@ -45,7 +45,7 @@ export default function Benefits() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Du bekommst nicht nur Code, sondern eine saubere digitale Lösung.
+          Wir liefern nicht nur Code, sondern eine saubere digitale Lösung.
         </motion.h2>
 
         <motion.p
@@ -54,8 +54,8 @@ export default function Benefits() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Ich achte auf Design, Struktur, Performance und Nutzerfreundlichkeit,
-          damit deine Website professionell wirkt und langfristig funktioniert.
+          Wir achten auf Design, Struktur, Performance und Nutzerfreundlichkeit,
+          damit Websites professionell wirken und langfristig funktionieren.
         </motion.p>
       </div>
 
