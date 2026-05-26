@@ -86,12 +86,18 @@
 }
 
 .navCenter a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 11px 18px;
   border-radius: 999px;
   color: var(--muted);
   font-size: 0.92rem;
   font-weight: 800;
-  transition: 0.2s ease;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .navCenter a:hover {
@@ -101,6 +107,9 @@
 
 .ctaButton {
   justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 13px 22px;
   border-radius: 999px;
   color: white;
@@ -108,7 +117,9 @@
   font-weight: 900;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   box-shadow: 0 14px 35px rgba(56, 189, 248, 0.22);
-  transition: 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .ctaButton:hover {
@@ -147,6 +158,12 @@
 
   .ctaButton {
     justify-self: end;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    display: none;
   }
 }
 

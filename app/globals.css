@@ -83,6 +83,10 @@ section {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-bottom: 110px;
+  }
+
   section {
     padding: 82px 18px;
   }
