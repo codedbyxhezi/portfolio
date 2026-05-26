@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import { motion } from "framer-motion";
 import styles from "./BenefitsPage.module.css";
 
@@ -28,27 +27,6 @@ const benefits = [
 ];
 
 export default function Benefits() {
-  const carouselRef = useRef<HTMLDivElement | null>(null);
-
-  function scrollCarousel(direction: "left" | "right") {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const firstSlide = carousel.querySelector<HTMLElement>(
-      `.${styles.card}`
-    );
-
-    if (!firstSlide) return;
-
-    const gap = 16;
-    const slideWidth = firstSlide.offsetWidth + gap;
-
-    carousel.scrollBy({
-      left: direction === "right" ? slideWidth : -slideWidth,
-      behavior: "smooth",
-    });
-  }
-
   return (
     <section className={styles.benefitsSection}>
       <div className={`container ${styles.header}`}>
@@ -81,45 +59,25 @@ export default function Benefits() {
         </motion.p>
       </div>
 
-      <div className={`container ${styles.carouselWrap}`}>
-        <div ref={carouselRef} className={styles.grid}>
-          {benefits.map((benefit, index) => (
-            <motion.article
-              key={benefit.title}
-              className={styles.card}
-              initial={{ opacity: 0, y: 34 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{
-                duration: 0.55,
-                delay: index * 0.08,
-              }}
-              whileHover={{ y: -9 }}
-            >
-              <span className={styles.number}>{benefit.number}</span>
-              <h3>{benefit.title}</h3>
-              <p>{benefit.text}</p>
-            </motion.article>
-          ))}
-        </div>
-
-        <div className={styles.carouselControls}>
-          <button
-            type="button"
-            onClick={() => scrollCarousel("left")}
-            aria-label="Vorherigen Vorteil anzeigen"
+      <div className={`container ${styles.grid}`}>
+        {benefits.map((benefit, index) => (
+          <motion.article
+            key={benefit.title}
+            className={styles.card}
+            initial={{ opacity: 0, y: 34 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{
+              duration: 0.55,
+              delay: index * 0.08,
+            }}
+            whileHover={{ y: -9 }}
           >
-            ←
-          </button>
-
-          <button
-            type="button"
-            onClick={() => scrollCarousel("right")}
-            aria-label="Nächsten Vorteil anzeigen"
-          >
-            →
-          </button>
-        </div>
+            <span className={styles.number}>{benefit.number}</span>
+            <h3>{benefit.title}</h3>
+            <p>{benefit.text}</p>
+          </motion.article>
+        ))}
       </div>
     </section>
   );
