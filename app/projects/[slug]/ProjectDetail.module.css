@@ -3,10 +3,26 @@
 }
 
 .hero {
+  position: relative;
   padding-top: 130px;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.13);
+  filter: blur(80px);
+}
+
 .heroInner {
+  position: relative;
+  z-index: 1;
   display: grid;
   justify-items: start;
 }
@@ -67,9 +83,10 @@
     0 0 32px rgba(56, 189, 248, 0.1);
 }
 
-.badge {
+.badge,
+.smallBadge {
   display: inline-flex;
-  margin-bottom: 24px;
+  width: fit-content;
   padding: 10px 15px;
   border-radius: 999px;
   color: #bae6fd;
@@ -81,16 +98,20 @@
   letter-spacing: 0.08em;
 }
 
+.badge {
+  margin-bottom: 24px;
+}
+
 .hero h1 {
-  max-width: 980px;
+  max-width: 1050px;
   margin: 0 auto;
-  font-size: clamp(3rem, 7vw, 6.4rem);
+  font-size: clamp(3rem, 7vw, 6.7rem);
   line-height: 0.95;
   letter-spacing: -0.07em;
 }
 
 .hero p {
-  max-width: 820px;
+  max-width: 880px;
   margin: 26px auto 0;
   color: var(--muted);
   font-size: 1.15rem;
@@ -113,7 +134,11 @@
   padding: 15px 23px;
   border-radius: 999px;
   font-weight: 900;
-  transition: 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .primaryButton {
@@ -133,36 +158,36 @@
   transform: translateY(-3px);
 }
 
-.contentSection {
-  padding-top: 40px;
+.secondaryButton:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(56, 189, 248, 0.1);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 34px;
-  align-items: start;
+.showcaseSection {
+  padding-top: 44px;
 }
 
-.previewCard,
-.info {
-  border-radius: 34px;
+.showcaseCard {
+  position: relative;
+  overflow: hidden;
+  padding: 14px;
+  border-radius: 38px;
   background:
-    linear-gradient(135deg, rgba(255,255,255,0.085), rgba(255,255,255,0.03)),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.095),
+      rgba(255, 255, 255, 0.035)
+    ),
     rgba(15, 23, 42, 0.72);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
 
-.previewCard {
-  padding: 14px;
-}
-
 .imageWrapper {
   position: relative;
-  min-height: 520px;
+  min-height: 620px;
   overflow: hidden;
-  border-radius: 26px;
+  border-radius: 28px;
   background: rgba(15, 23, 42, 0.75);
 }
 
@@ -170,47 +195,147 @@
   object-fit: cover;
 }
 
-.info {
-  padding: 30px;
+.metaSection {
+  padding-top: 28px;
 }
 
 .metaGrid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-  margin-bottom: 34px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 }
 
-.metaGrid div {
-  padding: 18px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid rgba(148, 163, 184, 0.13);
+.metaCard {
+  padding: 22px;
+  border-radius: 28px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.085),
+      rgba(255, 255, 255, 0.03)
+    ),
+    rgba(15, 23, 42, 0.72);
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 58px rgba(0, 0, 0, 0.2);
 }
 
-.metaGrid span {
+.metaCard span {
   display: block;
   margin-bottom: 8px;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-.metaGrid strong {
+.metaCard strong {
   color: white;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
 }
 
-.block {
-  margin-top: 30px;
+.caseSection {
+  padding-top: 40px;
 }
 
-.block h2 {
-  margin-bottom: 16px;
-  font-size: 1.35rem;
-  letter-spacing: -0.03em;
+.caseGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.caseCard {
+  position: relative;
+  overflow: hidden;
+  min-height: 310px;
+  padding: 30px;
+  border-radius: 34px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.085),
+      rgba(255, 255, 255, 0.03)
+    ),
+    rgba(15, 23, 42, 0.72);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.caseCard::before {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  right: -110px;
+  top: -110px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.14);
+  filter: blur(16px);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.caseCard:hover::before {
+  opacity: 1;
+}
+
+.caseCard span {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  margin-bottom: 44px;
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 950;
+}
+
+.caseCard h2 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 14px;
+  font-size: 1.8rem;
+  letter-spacing: -0.05em;
+}
+
+.caseCard p {
+  position: relative;
+  z-index: 1;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.detailsSection {
+  padding-top: 40px;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.detailBlock {
+  position: relative;
+  overflow: hidden;
+  padding: 32px;
+  border-radius: 34px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.085),
+      rgba(255, 255, 255, 0.03)
+    ),
+    rgba(15, 23, 42, 0.72);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.detailBlock h2 {
+  margin-top: 22px;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  letter-spacing: -0.05em;
 }
 
 .tags {
@@ -229,15 +354,15 @@
   border: 1px solid var(--border);
 }
 
-.block ul {
+.detailBlock ul {
   display: grid;
   gap: 12px;
   padding-left: 18px;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
-.block li::marker {
+.detailBlock li::marker {
   color: var(--primary);
 }
 
@@ -246,16 +371,26 @@
     padding-top: 105px;
   }
 
-  .grid {
+  .imageWrapper {
+    min-height: 440px;
+  }
+
+  .metaGrid,
+  .caseGrid,
+  .detailsGrid {
     grid-template-columns: 1fr;
   }
 
-  .imageWrapper {
-    min-height: 420px;
+  .caseCard {
+    min-height: auto;
   }
 }
 
 @media (max-width: 560px) {
+  .hero {
+    padding-top: 95px;
+  }
+
   .backLink {
     margin-bottom: 28px;
     padding: 10px 14px;
@@ -276,11 +411,24 @@
     width: 100%;
   }
 
-  .imageWrapper {
-    min-height: 280px;
+  .showcaseCard {
+    padding: 10px;
+    border-radius: 28px;
   }
 
-  .info {
-    padding: 22px;
+  .imageWrapper {
+    min-height: 280px;
+    border-radius: 22px;
+  }
+
+  .metaCard,
+  .caseCard,
+  .detailBlock {
+    padding: 24px;
+    border-radius: 28px;
+  }
+
+  .caseCard span {
+    margin-bottom: 34px;
   }
 }

@@ -12,6 +12,11 @@ export type Project = {
   role: string;
   features: string[];
   image: string;
+  caseStudy: {
+    goal: string;
+    solution: string;
+    result: string;
+  };
 };
 
 export const projects: Project[] = [
@@ -37,6 +42,13 @@ export const projects: Project[] = [
       "Unterseiten für Leistungen, Projekte, Skills und Kontakt",
       "SEO-Grundstruktur mit Sitemap, Robots und Metadaten",
     ],
+    caseStudy: {
+      goal: "Ziel war es, einen digitalen Auftritt zu entwickeln, der wie ein modernes Webstudio wirkt und Leistungen, Projekte und Kontaktmöglichkeiten klar präsentiert.",
+      solution:
+        "Die Website wurde mit Next.js, TypeScript und CSS Modules aufgebaut. Animationen, Unterseiten und ein Mobile Dock sorgen für ein modernes Nutzererlebnis.",
+      result:
+        "Entstanden ist eine responsive, schnelle und visuell starke Website mit sauberer Struktur, Case-Study-Bereichen und professionellem Markenauftritt.",
+    },
   },
   {
     slug: "task-manager",
@@ -60,6 +72,13 @@ export const projects: Project[] = [
       "Speicherung über Local Storage möglich",
       "Responsive Web-App Oberfläche",
     ],
+    caseStudy: {
+      goal: "Ziel war ein Dashboard-Konzept, das Aufgaben und Fortschritt übersichtlich darstellt und eine klare Bedienung ermöglicht.",
+      solution:
+        "Das Interface wurde in strukturierte Bereiche aufgeteilt: Aufgabenlisten, Statuskarten, Filterlogik und visuelle Fortschrittsbereiche.",
+      result:
+        "Das Ergebnis ist ein modernes Web-App-Konzept mit klarer UI, guter Übersicht und einer Basis, die später funktional erweitert werden kann.",
+    },
   },
   {
     slug: "landing-page",
@@ -83,6 +102,13 @@ export const projects: Project[] = [
       "Responsive Umsetzung für alle Geräte",
       "Schneller und fokussierter Seitenaufbau",
     ],
+    caseStudy: {
+      goal: "Ziel war eine Landing Page, die ein digitales Produkt klar präsentiert und Nutzer schnell zur gewünschten Aktion führt.",
+      solution:
+        "Die Seite wurde mit starker Hero Section, klaren Benefits, Feature-Bereichen und auffälligen Call-to-Actions aufgebaut.",
+      result:
+        "Entstanden ist eine fokussierte, responsive Landing Page mit moderner Gestaltung und klarer Conversion-Struktur.",
+    },
   },
 ];
 

@@ -57,6 +57,48 @@ const services = [
   },
 ];
 
+const packages = [
+  {
+    name: "Starter Website",
+    tag: "Für den Einstieg",
+    price: "ab 499 €",
+    note: "Startpreis",
+    text: "Ideal für eine moderne Online-Präsenz mit klarer Struktur und professionellem Look.",
+    items: [
+      "1 bis 3 Seiten",
+      "Responsive Design",
+      "Kontaktbereich",
+      "Basis SEO-Struktur",
+    ],
+  },
+  {
+    name: "Business Website",
+    tag: "Beliebt",
+    price: "ab 899 €",
+    note: "Startpreis",
+    text: "Für Unternehmen, Selbstständige oder Marken, die seriös auftreten und Vertrauen aufbauen möchten.",
+    items: [
+      "Mehrere Unterseiten",
+      "Leistungsbereiche",
+      "Projekt- oder Referenzbereich",
+      "SEO- und Performance-Fokus",
+    ],
+  },
+  {
+    name: "Landing Page",
+    tag: "Für Kampagnen",
+    price: "ab 699 €",
+    note: "Startpreis",
+    text: "Für Angebote, Produkte oder Aktionen, bei denen eine klare Botschaft und Conversion wichtig sind.",
+    items: [
+      "Starke Hero Section",
+      "Benefits und Features",
+      "Call-to-Action Bereiche",
+      "Mobile-first Aufbau",
+    ],
+  },
+];
+
 export default function ServicesPage() {
   return (
     <>
@@ -105,6 +147,51 @@ export default function ServicesPage() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section className={styles.packageSection}>
+          <div className={`container ${styles.packageHeader}`}>
+            <span className={styles.badge}>Startpreise</span>
+
+            <h2>Flexible Lösungen für verschiedene Projektgrößen.</h2>
+
+            <p>
+              Ob kleine Website, professioneller Firmenauftritt oder fokussierte
+              Landing Page — wir wählen den Aufbau passend zum Ziel des Projekts.
+            </p>
+          </div>
+
+          <div className={`container ${styles.packageGrid}`}>
+            {packages.map((item) => (
+              <article key={item.name} className={styles.packageCard}>
+                <span className={styles.packageTag}>{item.tag}</span>
+
+                <h3>{item.name}</h3>
+
+                <div className={styles.priceBox}>
+                  <strong>{item.price}</strong>
+                  <span>{item.note}</span>
+                </div>
+
+                <p>{item.text}</p>
+
+                <ul>
+                  {item.items.map((packageItem) => (
+                    <li key={packageItem}>{packageItem}</li>
+                  ))}
+                </ul>
+
+                <Link href="/contact" className={styles.packageButton}>
+                  Anfragen
+                </Link>
+              </article>
+            ))}
+          </div>
+
+          <p className={styles.priceNote}>
+            Alle Preise sind Startpreise und können je nach Umfang, Funktionen
+            und Projektanforderungen variieren.
+          </p>
         </section>
 
         <section className={styles.ctaSection}>

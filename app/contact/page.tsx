@@ -7,27 +7,64 @@ import styles from "./ContactPage.module.css";
 export const metadata = {
   title: "Kontakt",
   description:
-    "Kontaktiere Zemax Digital für moderne Websites, Web-Apps und Fullstack-Webentwicklung.",
+    "Kontaktiere Zemax Digital für moderne Websites, Webdesign und digitale Weblösungen.",
 };
+
+const contactCards = [
+  {
+    title: "E-Mail",
+    text: "Schreib uns direkt eine Nachricht.",
+    value: "djezi.zenki@outlook.de",
+    href: "mailto:djezi.zenki@outlook.de",
+  },
+  {
+    title: "Projektanfrage",
+    text: "Für Websites, Landing Pages und Weblösungen.",
+    value: "Projekt starten",
+    href: "#contact",
+  },
+  {
+    title: "Antwortzeit",
+    text: "Wir melden uns so schnell wie möglich zurück.",
+    value: "Schnelle Rückmeldung",
+    href: "#contact",
+  },
+];
 
 export default function ContactPage() {
   return (
     <>
       <Navbar />
+
       <main className={styles.page}>
         <section className={styles.hero}>
           <div className="container">
             <span className={styles.badge}>Kontakt</span>
+
             <h1>Lass uns gemeinsam dein nächstes Projekt starten.</h1>
+
             <p>
-              Schreib mir eine Nachricht mit deiner Idee, deinem Ziel oder deiner
-              Anfrage. Ich melde mich schnellstmöglich zurück.
+              Schreib uns eine Nachricht mit deiner Idee, deinem Ziel oder deiner
+              Anfrage. Zemax Digital meldet sich schnellstmöglich zurück.
             </p>
+          </div>
+        </section>
+
+        <section className={styles.contactInfoSection}>
+          <div className={`container ${styles.contactGrid}`}>
+            {contactCards.map((card) => (
+              <a key={card.title} href={card.href} className={styles.infoCard}>
+                <span>{card.title}</span>
+                <h2>{card.value}</h2>
+                <p>{card.text}</p>
+              </a>
+            ))}
           </div>
         </section>
 
         <Contact />
       </main>
+
       <Footer />
       <ScrollToTop />
     </>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./Services.module.css";
 
@@ -93,6 +94,26 @@ export default function Services() {
           </motion.article>
         ))}
       </div>
+
+      <motion.div
+        className={`container ${styles.priceTeaser}`}
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 0.55 }}
+      >
+        <div>
+          <span>Startpreise verfügbar</span>
+          <p>
+            Auf der Leistungsseite findest du Richtwerte für Starter Websites,
+            Business Websites und Landing Pages.
+          </p>
+        </div>
+
+        <Link href="/services" className={styles.teaserButton}>
+          Startpreise ansehen
+        </Link>
+      </motion.div>
     </section>
   );
 }

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://DEINE-VERCEL-URL.vercel.app"),
+  metadataBase: new URL("https://portfolio-rouge-nine-10.vercel.app/"),
   title: {
     default: "Zemax Digital | Digital Web Studio",
     template: "%s | Zemax Digital",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Zemax Digital | Digital Web Studio",
     description:
       "Moderne Webentwicklung mit Next.js, React, TypeScript und sauberem Design.",
-    url: "https://DEINE-VERCEL-URL.vercel.app",
+    url: "https://portfolio-rouge-nine-10.vercel.app/",
     siteName: "Zemax Digital",
     locale: "de_DE",
     type: "website",

@@ -77,56 +77,87 @@ export default async function ProjectDetailPage({
           </div>
         </section>
 
-        <section className={styles.contentSection}>
-          <div className={`container ${styles.grid}`}>
-            <div className={styles.previewCard}>
+        <section className={styles.showcaseSection}>
+          <div className="container">
+            <div className={styles.showcaseCard}>
               <div className={styles.imageWrapper}>
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
+                  priority
                   className={styles.projectImage}
                 />
               </div>
             </div>
+          </div>
+        </section>
 
-            <div className={styles.info}>
-              <div className={styles.metaGrid}>
-                <div>
-                  <span>Jahr</span>
-                  <strong>{project.year}</strong>
-                </div>
+        <section className={styles.metaSection}>
+          <div className={`container ${styles.metaGrid}`}>
+            <div className={styles.metaCard}>
+              <span>Jahr</span>
+              <strong>{project.year}</strong>
+            </div>
 
-                <div>
-                  <span>Rolle</span>
-                  <strong>{project.role}</strong>
-                </div>
+            <div className={styles.metaCard}>
+              <span>Rolle</span>
+              <strong>{project.role}</strong>
+            </div>
 
-                <div>
-                  <span>Kategorie</span>
-                  <strong>{project.category}</strong>
-                </div>
+            <div className={styles.metaCard}>
+              <span>Kategorie</span>
+              <strong>{project.category}</strong>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.caseSection}>
+          <div className={`container ${styles.caseGrid}`}>
+            <article className={styles.caseCard}>
+              <span>01</span>
+              <h2>Ziel</h2>
+              <p>{project.caseStudy.goal}</p>
+            </article>
+
+            <article className={styles.caseCard}>
+              <span>02</span>
+              <h2>Lösung</h2>
+              <p>{project.caseStudy.solution}</p>
+            </article>
+
+            <article className={styles.caseCard}>
+              <span>03</span>
+              <h2>Ergebnis</h2>
+              <p>{project.caseStudy.result}</p>
+            </article>
+          </div>
+        </section>
+
+        <section className={styles.detailsSection}>
+          <div className={`container ${styles.detailsGrid}`}>
+            <div className={styles.detailBlock}>
+              <span className={styles.smallBadge}>Technologien</span>
+
+              <h2>Tech-Stack</h2>
+
+              <div className={styles.tags}>
+                {project.technologies.map((tech) => (
+                  <span key={tech}>{tech}</span>
+                ))}
               </div>
+            </div>
 
-              <div className={styles.block}>
-                <h2>Technologien</h2>
+            <div className={styles.detailBlock}>
+              <span className={styles.smallBadge}>Features</span>
 
-                <div className={styles.tags}>
-                  {project.technologies.map((tech) => (
-                    <span key={tech}>{tech}</span>
-                  ))}
-                </div>
-              </div>
+              <h2>Was umgesetzt wurde</h2>
 
-              <div className={styles.block}>
-                <h2>Features</h2>
-
-                <ul>
-                  {project.features.map((feature) => (
-                    <li key={feature}>{feature}</li>
-                  ))}
-                </ul>
-              </div>
+              <ul>
+                {project.features.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
