@@ -17,6 +17,29 @@
 
 @media (max-width: 680px) {
   .grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    grid-template-columns: unset;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 14px;
+    scrollbar-width: none;
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      black 6%,
+      black 94%,
+      transparent
+    );
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .grid > * {
+    flex: 0 0 86%;
+    min-width: 86%;
+    scroll-snap-align: start;
   }
 }
