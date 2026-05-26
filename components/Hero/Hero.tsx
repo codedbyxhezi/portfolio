@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./Hero.module.css";
 
@@ -79,7 +80,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.5 }}
           >
             <motion.a
-              href="#projects"
+              href="/projects"
               className={styles.primaryButton}
               whileHover={{ y: -4, scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
@@ -88,7 +89,7 @@ export default function Hero() {
             </motion.a>
 
             <motion.a
-              href="#contact"
+              href="/contact"
               className={styles.secondaryButton}
               whileHover={{ y: -4, scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
@@ -127,7 +128,15 @@ export default function Hero() {
             </div>
 
             <div className={styles.showcaseHeader}>
-              <span className={styles.logoMark}>XZ</span>
+              <span className={styles.logoMark}>
+                <Image
+                  src="/images/zemax-logo.png"
+                  alt="Zemax Digital Logo"
+                  width={58}
+                  height={58}
+                  className={styles.logoMarkImage}
+                />
+              </span>             
 
               <div>
                 <span className={styles.cardLabel}>Digital Web Studio</span>

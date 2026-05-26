@@ -257,15 +257,27 @@
   height: 64px;
   display: grid;
   place-items: center;
+  flex-shrink: 0;
   border-radius: 22px;
-  color: white;
-  font-size: 1.15rem;
-  font-weight: 950;
-  letter-spacing: -0.04em;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.11),
+      rgba(255, 255, 255, 0.035)
+    ),
+    rgba(7, 11, 24, 0.62);
+  border: 1px solid rgba(148, 163, 184, 0.18);
   box-shadow:
     0 0 0 8px rgba(56, 189, 248, 0.08),
     0 18px 40px rgba(56, 189, 248, 0.24);
+  overflow: hidden;
+}
+
+.logoMarkImage {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .cardLabel {
@@ -491,6 +503,11 @@
     height: 58px;
     border-radius: 20px;
   }
+
+  .logoMarkImage {
+  width: 50px;
+  height: 50px;
+}
 
   .previewGrid {
     grid-template-columns: 1fr;

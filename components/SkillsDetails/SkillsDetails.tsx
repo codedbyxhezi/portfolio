@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./SkillsDetails.module.css";
 
@@ -74,7 +75,8 @@ export default function SkillsDetails() {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           Von sauberem Frontend über moderne Frameworks bis zu responsiven
-          Interfaces — mein Stack ist auf schnelle, wartbare Websites ausgelegt.
+          Interfaces — unser Stack ist auf schnelle, wartbare Websites
+          ausgelegt.
         </motion.p>
       </div>
 
@@ -87,7 +89,15 @@ export default function SkillsDetails() {
           transition={{ duration: 0.7 }}
         >
           <div className={styles.orbit}>
-            <div className={styles.centerOrb}>DZ</div>
+            <div className={styles.centerOrb}>
+              <Image
+                src="/images/zemax-logo.png"
+                alt="Zemax Digital Logo"
+                width={86}
+                height={86}
+                className={styles.centerLogo}
+              />
+            </div>
 
             {techBadges.map((tech, index) => (
               <motion.span

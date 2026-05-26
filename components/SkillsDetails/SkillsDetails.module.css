@@ -128,6 +128,13 @@
     0 22px 60px rgba(56, 189, 248, 0.28);
 }
 
+.centerLogo {
+  width: 82px;
+  height: 82px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .orbitItem {
   position: absolute;
   display: inline-flex;
@@ -309,8 +316,12 @@
   .orbit {
     width: 100%;
     aspect-ratio: auto;
-    min-height: 360px;
-    border-radius: 32px;
+    min-height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 22px;
+    border-radius: 30px;
   }
 
   .orbit::before,
@@ -319,52 +330,45 @@
   }
 
   .centerOrb {
-    top: 28px;
-    left: 50%;
+    position: relative;
     inset: auto;
-    translate: -50% 0;
-    width: 88px;
-    height: 88px;
-    border-radius: 28px;
+    translate: none;
+    grid-column: 1 / -1;
+    width: 100%;
+    height: auto;
+    min-height: 76px;
+    border-radius: 22px;
+    font-size: 1.25rem;
+  }
+
+  .centerLogo {
+    width: 62px;
+    height: 62px;
   }
 
   .orbitItem {
-    position: absolute;
+    position: relative;
+    inset: auto;
+    transform: none !important;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 10px;
+    border-radius: 18px;
+    text-align: center;
     font-size: 0.8rem;
-    padding: 10px 12px;
   }
 
-  .item1 {
-    top: 146px;
-    left: 24px;
-    transform: none;
-  }
-
-  .item2 {
-    top: 146px;
-    right: 24px;
-  }
-
-  .item3 {
-    right: 24px;
-    bottom: 88px;
-  }
-
-  .item4 {
-    bottom: 34px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .item5 {
-    left: 24px;
-    bottom: 88px;
-  }
-
+  .item1,
+  .item2,
+  .item3,
+  .item4,
+  .item5,
   .item6 {
-    top: 210px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    transform: none !important;
   }
 
   .skillCard {

@@ -271,6 +271,22 @@
   color: var(--primary);
 }
 
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.legalLinks a {
+  color: var(--muted);
+  font-weight: 800;
+  transition: color 0.2s ease;
+}
+
+.legalLinks a:hover {
+  color: var(--primary);
+}
+
 @media (max-width: 900px) {
   .mainFooter {
     grid-template-columns: 1fr 1fr;
@@ -278,6 +294,13 @@
 
   .brand {
     grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .legalLinks {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
 

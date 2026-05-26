@@ -8,6 +8,7 @@ import styles from "./Footer.module.css";
 const navLinks = [
   { label: "Startseite", href: "/" },
   { label: "Über uns", href: "/about" },
+  { label: "Leistungen", href: "/services" },
   { label: "Skills", href: "/skills" },
   { label: "Projekte", href: "/projects" },
   { label: "Kontakt", href: "/contact" },
@@ -133,7 +134,10 @@ export default function Footer() {
           © {new Date().getFullYear()} Zemax Digital. Alle Rechte vorbehalten.
         </span>
 
-        <Link href="/">Zurück zur Startseite ↑</Link>
+        <div className={styles.legalLinks}>
+          <Link href="/impressum">Impressum</Link>
+          <Link href="/datenschutz">Datenschutz</Link>
+        </div>
       </div>
     </footer>
   );

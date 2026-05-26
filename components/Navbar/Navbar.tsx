@@ -9,6 +9,7 @@ import styles from "./Navbar.module.css";
 
 const navItems = [
   { label: "Über mich", href: "/about" },
+  { label: "Leistungen", href: "/services" },
   { label: "Skills", href: "/skills" },
   { label: "Projekte", href: "/projects" },
 ];

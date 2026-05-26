@@ -21,6 +21,12 @@ const navItems = [
     icon: "👥",
   },
   {
+    label: "Leistungen",
+    description: "Was wir anbieten",
+    href: "/services",
+    icon: "✦",
+  },
+  {
     label: "Skills",
     description: "Unser Tech-Stack",
     href: "/skills",

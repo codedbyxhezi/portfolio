@@ -4,19 +4,67 @@
 
 .hero {
   padding-top: 130px;
+}
+
+.heroInner {
+  display: grid;
+  justify-items: start;
+}
+
+.heroContent {
+  width: 100%;
   text-align: center;
 }
 
 .backLink {
   display: inline-flex;
-  margin-bottom: 28px;
-  color: var(--muted);
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  justify-self: start;
+  margin-bottom: 34px;
+  padding: 11px 16px;
+  border-radius: 999px;
+  color: #dbeafe;
+  font-size: 0.9rem;
   font-weight: 900;
-  transition: color 0.2s ease;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.09),
+      rgba(255, 255, 255, 0.035)
+    ),
+    rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.backLink span {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 10px 26px rgba(56, 189, 248, 0.24);
 }
 
 .backLink:hover {
-  color: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+  border-color: rgba(56, 189, 248, 0.42);
+  box-shadow:
+    0 18px 46px rgba(0, 0, 0, 0.28),
+    0 0 32px rgba(56, 189, 248, 0.1);
 }
 
 .badge {
@@ -208,6 +256,17 @@
 }
 
 @media (max-width: 560px) {
+  .backLink {
+    margin-bottom: 28px;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+  }
+
+  .backLink span {
+    width: 26px;
+    height: 26px;
+  }
+
   .actions {
     display: grid;
   }

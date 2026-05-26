@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./About.module.css";
 
@@ -80,7 +81,15 @@ export default function About() {
             </div>
 
             <div className={styles.profile}>
-              <div className={styles.avatar}>XZ</div>
+              <div className={styles.avatar}>
+                <Image
+                  src="/images/zemax-logo.png"
+                  alt="Zemax Digital Logo"
+                  width={62}
+                  height={62}
+                  className={styles.avatarLogo}
+                />
+              </div>
               <div>
                 <strong>Zemax Digital</strong>
                 <p>Digital Web Studio</p>

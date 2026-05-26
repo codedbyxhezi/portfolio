@@ -1,0 +1,86 @@
+.page {
+  overflow: hidden;
+}
+
+.hero {
+  padding-top: 130px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-flex;
+  margin-bottom: 24px;
+  padding: 10px 15px;
+  border-radius: 999px;
+  color: #bae6fd;
+  background: rgba(56, 189, 248, 0.09);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero h1 {
+  max-width: 920px;
+  margin: 0 auto;
+  font-size: clamp(2.8rem, 6vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.hero p {
+  max-width: 720px;
+  margin: 26px auto 0;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.contentSection {
+  padding-top: 40px;
+}
+
+.content {
+  display: grid;
+  gap: 22px;
+  max-width: 900px;
+}
+
+.card,
+.notice {
+  padding: 28px;
+  border-radius: 30px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.085), rgba(255,255,255,0.03)),
+    rgba(15, 23, 42, 0.72);
+  border: 1px solid var(--border);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.22);
+}
+
+.card h2 {
+  margin-bottom: 14px;
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+}
+
+.card p,
+.notice {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.card a {
+  color: var(--primary);
+  font-weight: 900;
+}
+
+.notice strong {
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 100px;
+  }
+}

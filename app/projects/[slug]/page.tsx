@@ -51,24 +51,28 @@ export default async function ProjectDetailPage({
 
       <main className={styles.page}>
         <section className={styles.hero}>
-          <div className="container">
+          <div className={`container ${styles.heroInner}`}>
             <Link href="/projects" className={styles.backLink}>
-              ← Zurück zu Projekten
+              <span>←</span>
+              Zurück zu Projekten
             </Link>
 
-            <span className={styles.badge}>{project.category}</span>
+            <div className={styles.heroContent}>
+              <span className={styles.badge}>{project.category}</span>
 
-            <h1>{project.title}</h1>
+              <h1>{project.title}</h1>
 
-            <p>{project.longDescription}</p>
+              <p>{project.longDescription}</p>
 
-            <div className={styles.actions}>
-              <a href={project.demoUrl} className={styles.primaryButton}>
-                Live Demo
-              </a>
-              <a href={project.githubUrl} className={styles.secondaryButton}>
-                GitHub ansehen
-              </a>
+              <div className={styles.actions}>
+                <a href={project.demoUrl} className={styles.primaryButton}>
+                  Live Demo
+                </a>
+
+                <a href={project.githubUrl} className={styles.secondaryButton}>
+                  GitHub ansehen
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -106,6 +110,7 @@ export default async function ProjectDetailPage({
 
               <div className={styles.block}>
                 <h2>Technologien</h2>
+
                 <div className={styles.tags}>
                   {project.technologies.map((tech) => (
                     <span key={tech}>{tech}</span>
@@ -115,6 +120,7 @@ export default async function ProjectDetailPage({
 
               <div className={styles.block}>
                 <h2>Features</h2>
+
                 <ul>
                   {project.features.map((feature) => (
                     <li key={feature}>{feature}</li>
