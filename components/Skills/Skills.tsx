@@ -13,6 +13,8 @@ const skills = [
   "Git",
 ];
 
+const marqueeSkills = [...skills, ...skills];
+
 export default function Skills() {
   return (
     <section id="skills" className={styles.previewSection}>
@@ -38,19 +40,21 @@ export default function Skills() {
           </Link>
         </motion.div>
 
-        <div className={styles.skillCloud}>
-          {skills.map((skill, index) => (
-            <motion.span
-              key={skill}
-              initial={{ opacity: 0, scale: 0.85, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: index * 0.08 }}
-              whileHover={{ y: -6, scale: 1.06 }}
-            >
-              {skill}
-            </motion.span>
-          ))}
+        <div className={styles.skillCarousel}>
+          <div className={styles.skillCloud}>
+            {marqueeSkills.map((skill, index) => (
+              <motion.span
+                key={`${skill}-${index}`}
+                initial={{ opacity: 0, scale: 0.85, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: (index % skills.length) * 0.08 }}
+                whileHover={{ y: -6, scale: 1.06 }}
+              >
+                {skill}
+              </motion.span>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -64,13 +64,16 @@
   line-height: 1.8;
 }
 
-.grid {
+.carouselWrap {
   position: relative;
   z-index: 1;
+  margin-top: 54px;
+}
+
+.grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 22px;
-  margin-top: 54px;
 }
 
 .card {
@@ -129,6 +132,10 @@
   line-height: 1.75;
 }
 
+.arrowButton {
+  display: none;
+}
+
 @media (max-width: 1050px) {
   .grid {
     grid-template-columns: 1fr 1fr;
@@ -136,15 +143,86 @@
 }
 
 @media (max-width: 620px) {
+  .carouselWrap {
+    padding-inline: 48px;
+  }
+
   .grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    grid-template-columns: unset;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 4px 0 18px;
+    scrollbar-width: none;
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
   }
 
   .card {
-    min-height: auto;
+    flex: 0 0 100%;
+    min-width: 100%;
+    min-height: 250px;
+    scroll-snap-align: start;
   }
 
   .number {
     margin-bottom: 34px;
+  }
+
+  .arrowButton {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(148, 163, 184, 0.24);
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 950;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.11),
+        rgba(255, 255, 255, 0.035)
+      ),
+      rgba(15, 23, 42, 0.84);
+    backdrop-filter: blur(18px);
+    box-shadow:
+      0 16px 40px rgba(0, 0, 0, 0.35),
+      0 0 26px rgba(56, 189, 248, 0.12);
+    transform: translateY(-50%);
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .arrowButton:hover {
+    transform: translateY(-50%) scale(1.06);
+    border-color: rgba(56, 189, 248, 0.45);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+  }
+
+  .leftArrow {
+    left: 0;
+  }
+
+  .rightArrow {
+    right: 0;
   }
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import styles from "./BenefitsPage.module.css";
 
@@ -27,6 +28,19 @@ const benefits = [
 ];
 
 export default function Benefits() {
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+
+  function scrollBenefits(direction: "left" | "right") {
+    if (!carouselRef.current) return;
+
+    const amount = carouselRef.current.clientWidth * 0.88;
+
+    carouselRef.current.scrollBy({
+      left: direction === "right" ? amount : -amount,
+      behavior: "smooth",
+    });
+  }
+
   return (
     <section className={styles.benefitsSection}>
       <div className={`container ${styles.header}`}>
@@ -59,25 +73,45 @@ export default function Benefits() {
         </motion.p>
       </div>
 
-      <div className={`container ${styles.grid}`}>
-        {benefits.map((benefit, index) => (
-          <motion.article
-            key={benefit.title}
-            className={styles.card}
-            initial={{ opacity: 0, y: 34 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{
-              duration: 0.55,
-              delay: index * 0.08,
-            }}
-            whileHover={{ y: -9 }}
-          >
-            <span className={styles.number}>{benefit.number}</span>
-            <h3>{benefit.title}</h3>
-            <p>{benefit.text}</p>
-          </motion.article>
-        ))}
+      <div className={`container ${styles.carouselWrap}`}>
+        <button
+          type="button"
+          className={`${styles.arrowButton} ${styles.leftArrow}`}
+          onClick={() => scrollBenefits("left")}
+          aria-label="Vorherige Vorteile"
+        >
+          ←
+        </button>
+
+        <div ref={carouselRef} className={styles.grid}>
+          {benefits.map((benefit, index) => (
+            <motion.article
+              key={benefit.title}
+              className={styles.card}
+              initial={{ opacity: 0, y: 34 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{
+                duration: 0.55,
+                delay: index * 0.08,
+              }}
+              whileHover={{ y: -9 }}
+            >
+              <span className={styles.number}>{benefit.number}</span>
+              <h3>{benefit.title}</h3>
+              <p>{benefit.text}</p>
+            </motion.article>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          className={`${styles.arrowButton} ${styles.rightArrow}`}
+          onClick={() => scrollBenefits("right")}
+          aria-label="Nächste Vorteile"
+        >
+          →
+        </button>
       </div>
     </section>
   );

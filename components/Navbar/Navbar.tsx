@@ -8,7 +8,7 @@ import MobileDockNav from "@/components/MobileDockNav/MobileDockNav";
 import styles from "./Navbar.module.css";
 
 const navItems = [
-  { label: "Über mich", href: "/about" },
+  { label: "Über uns", href: "/about" },
   { label: "Leistungen", href: "/services" },
   { label: "Skills", href: "/skills" },
   { label: "Projekte", href: "/projects" },

@@ -77,6 +77,10 @@
   box-shadow: 0 22px 55px rgba(56, 189, 248, 0.3);
 }
 
+.skillCarousel {
+  position: relative;
+}
+
 .skillCloud {
   display: flex;
   flex-wrap: wrap;
@@ -125,15 +129,9 @@
     width: 100%;
   }
 
-  .skillCloud {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    gap: 12px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 12px;
-    scrollbar-width: none;
+  .skillCarousel {
+    width: 100%;
+    overflow: hidden;
     mask-image: linear-gradient(
       90deg,
       transparent,
@@ -143,8 +141,16 @@
     );
   }
 
-  .skillCloud::-webkit-scrollbar {
-    display: none;
+  .skillCloud {
+    width: max-content;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 12px;
+    animation: skillsMarquee 18s linear infinite;
+  }
+
+  .skillCarousel:hover .skillCloud {
+    animation-play-state: paused;
   }
 
   .skillCloud span {
@@ -152,7 +158,16 @@
     min-width: max-content;
     min-height: 52px;
     padding: 14px 18px;
-    scroll-snap-align: start;
     white-space: nowrap;
+  }
+
+  @keyframes skillsMarquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
   }
 }

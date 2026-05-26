@@ -235,30 +235,11 @@
 
 @media (max-width: 620px) {
   .grid {
-    display: flex;
-    gap: 16px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 14px;
-    scrollbar-width: none;
-    mask-image: linear-gradient(
-      90deg,
-      transparent,
-      black 6%,
-      black 94%,
-      transparent
-    );
-  }
-
-  .grid::-webkit-scrollbar {
-    display: none;
+    grid-template-columns: 1fr;
   }
 
   .card {
-    flex: 0 0 84%;
-    min-width: 84%;
     min-height: auto;
-    scroll-snap-align: start;
   }
 
   .cardTop {
