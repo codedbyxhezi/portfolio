@@ -10,12 +10,20 @@ export default function Projects() {
   const carouselRef = useRef<HTMLDivElement | null>(null);
 
   function scrollCarousel(direction: "left" | "right") {
-    if (!carouselRef.current) return;
+    const carousel = carouselRef.current;
+    if (!carousel) return;
 
-    const amount = carouselRef.current.clientWidth * 0.88;
+    const firstSlide = carousel.querySelector<HTMLElement>(
+      `.${styles.slideItem}`
+    );
 
-    carouselRef.current.scrollBy({
-      left: direction === "right" ? amount : -amount,
+    if (!firstSlide) return;
+
+    const gap = 16;
+    const slideWidth = firstSlide.offsetWidth + gap;
+
+    carousel.scrollBy({
+      left: direction === "right" ? slideWidth : -slideWidth,
       behavior: "smooth",
     });
   }
@@ -55,15 +63,6 @@ export default function Projects() {
       </div>
 
       <div className={`container ${styles.carouselWrap}`}>
-        <button
-          type="button"
-          className={`${styles.arrowButton} ${styles.leftArrow}`}
-          onClick={() => scrollCarousel("left")}
-          aria-label="Vorherige Projekte"
-        >
-          ←
-        </button>
-
         <div ref={carouselRef} className={styles.grid}>
           {projects.map((project, index) => (
             <motion.div
@@ -82,14 +81,23 @@ export default function Projects() {
           ))}
         </div>
 
-        <button
-          type="button"
-          className={`${styles.arrowButton} ${styles.rightArrow}`}
-          onClick={() => scrollCarousel("right")}
-          aria-label="Nächste Projekte"
-        >
-          →
-        </button>
+        <div className={styles.carouselControls}>
+          <button
+            type="button"
+            onClick={() => scrollCarousel("left")}
+            aria-label="Vorheriges Projekt anzeigen"
+          >
+            ←
+          </button>
+
+          <button
+            type="button"
+            onClick={() => scrollCarousel("right")}
+            aria-label="Nächstes Projekt anzeigen"
+          >
+            →
+          </button>
+        </div>
       </div>
     </section>
   );

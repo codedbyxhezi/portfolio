@@ -30,13 +30,21 @@ const benefits = [
 export default function Benefits() {
   const carouselRef = useRef<HTMLDivElement | null>(null);
 
-  function scrollBenefits(direction: "left" | "right") {
-    if (!carouselRef.current) return;
+  function scrollCarousel(direction: "left" | "right") {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
 
-    const amount = carouselRef.current.clientWidth * 0.88;
+    const firstSlide = carousel.querySelector<HTMLElement>(
+      `.${styles.card}`
+    );
 
-    carouselRef.current.scrollBy({
-      left: direction === "right" ? amount : -amount,
+    if (!firstSlide) return;
+
+    const gap = 16;
+    const slideWidth = firstSlide.offsetWidth + gap;
+
+    carousel.scrollBy({
+      left: direction === "right" ? slideWidth : -slideWidth,
       behavior: "smooth",
     });
   }
@@ -74,15 +82,6 @@ export default function Benefits() {
       </div>
 
       <div className={`container ${styles.carouselWrap}`}>
-        <button
-          type="button"
-          className={`${styles.arrowButton} ${styles.leftArrow}`}
-          onClick={() => scrollBenefits("left")}
-          aria-label="Vorherige Vorteile"
-        >
-          ←
-        </button>
-
         <div ref={carouselRef} className={styles.grid}>
           {benefits.map((benefit, index) => (
             <motion.article
@@ -104,14 +103,23 @@ export default function Benefits() {
           ))}
         </div>
 
-        <button
-          type="button"
-          className={`${styles.arrowButton} ${styles.rightArrow}`}
-          onClick={() => scrollBenefits("right")}
-          aria-label="Nächste Vorteile"
-        >
-          →
-        </button>
+        <div className={styles.carouselControls}>
+          <button
+            type="button"
+            onClick={() => scrollCarousel("left")}
+            aria-label="Vorherigen Vorteil anzeigen"
+          >
+            ←
+          </button>
+
+          <button
+            type="button"
+            onClick={() => scrollCarousel("right")}
+            aria-label="Nächsten Vorteil anzeigen"
+          >
+            →
+          </button>
+        </div>
       </div>
     </section>
   );
