@@ -64,13 +64,16 @@
   line-height: 1.8;
 }
 
-.grid {
+.carouselWrap {
   position: relative;
   z-index: 1;
+  margin-top: 56px;
+}
+
+.grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
-  margin-top: 56px;
 }
 
 .card {
@@ -177,6 +180,10 @@
   font-size: 1.2rem;
 }
 
+.carouselControls {
+  display: none;
+}
+
 @media (max-width: 980px) {
   .grid {
     grid-template-columns: 1fr;
@@ -187,7 +194,75 @@
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 620px) {
+  .carouselWrap {
+    margin-top: 44px;
+  }
+
+  .grid {
+    display: flex;
+    align-items: stretch;
+    grid-template-columns: unset;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 4px 0 18px;
+    scrollbar-width: none;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slideItem {
+    flex: 0 0 86%;
+    min-width: 86%;
+    min-height: 360px;
+    scroll-snap-align: start;
+  }
+
+  .carouselControls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .carouselControls button {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(148, 163, 184, 0.24);
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 950;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.11),
+        rgba(255, 255, 255, 0.035)
+      ),
+      rgba(15, 23, 42, 0.84);
+    backdrop-filter: blur(18px);
+    box-shadow:
+      0 16px 40px rgba(0, 0, 0, 0.35),
+      0 0 26px rgba(56, 189, 248, 0.12);
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .carouselControls button:hover {
+    transform: translateY(-3px);
+    border-color: rgba(56, 189, 248, 0.45);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+  }
+
   .card {
     padding: 24px;
     border-radius: 28px;

@@ -19,7 +19,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   function isActive(href: string) {
-    return pathname === href;
+    return pathname === href || pathname.startsWith(`${href}/`);
   }
 
   return (
@@ -47,9 +47,9 @@ export default function Navbar() {
             </motion.div>
 
             <div className={styles.brandText}>
-            <span>Zemax Digital</span>
-            <small>Digital Web Studio</small>
-</div>
+              <span>Zemax Digital</span>
+              <small>Digital Web Studio</small>
+            </div>
           </Link>
 
           <div className={styles.navCenter}>
@@ -76,7 +76,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               className={`${styles.ctaButton} ${
-                pathname === "/contact" ? styles.activeCta : ""
+                isActive("/contact") ? styles.activeCta : ""
               }`}
             >
               Kontakt
