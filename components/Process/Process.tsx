@@ -5,22 +5,22 @@ import styles from "./Process.module.css";
 
 const steps = [
   {
-    number: "01",
+    number: "I",
     title: "Analyse",
     text: "Wir klären Ziel, Zielgruppe, Inhalte und Anforderungen, damit die Website von Anfang an klar ausgerichtet ist.",
   },
   {
-    number: "02",
+    number: "II",
     title: "Konzept",
     text: "Aus den Anforderungen entsteht eine saubere Seitenstruktur mit klarem Fokus auf Nutzerführung und Wirkung.",
   },
   {
-    number: "03",
+    number: "III",
     title: "Design & Entwicklung",
     text: "Wir setzen das Design modern, responsive und performant mit sauberer Komponentenstruktur um.",
   },
   {
-    number: "04",
+    number: "IV",
     title: "Launch",
     text: "Nach finalem Feinschliff wird die Website vorbereitet, getestet und bereit für den Onlinegang gemacht.",
   },
@@ -74,6 +74,7 @@ export default function Process() {
             </div>
 
             <div className={styles.card}>
+              <small>Step {index + 1}</small>
               <h3>{step.title}</h3>
               <p>{step.text}</p>
             </div>

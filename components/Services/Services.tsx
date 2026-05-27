@@ -8,24 +8,28 @@ import styles from "./Services.module.css";
 const services = [
   {
     number: "01",
+    icon: "✦",
     title: "Webdesign",
     text: "Moderne Layouts, klare Nutzerführung und ein hochwertiger Look für professionelle Websites.",
     tags: ["UI Design", "Responsive", "Brand Look"],
   },
   {
     number: "02",
+    icon: "◈",
     title: "Business Websites",
     text: "Websites für Unternehmen, Selbstständige und Marken, die seriös auftreten und Vertrauen schaffen wollen.",
     tags: ["Company Site", "SEO Ready", "Performance"],
   },
   {
     number: "03",
+    icon: "↗",
     title: "Landing Pages",
     text: "Fokussierte Seiten für Produkte, Angebote oder Kampagnen mit klaren Call-to-Actions.",
     tags: ["Conversion", "CTA", "Marketing"],
   },
   {
     number: "04",
+    icon: "</>",
     title: "Web Apps",
     text: "Interaktive Frontend-Lösungen mit sauberer Komponentenstruktur und moderner Technologie.",
     tags: ["Next.js", "React", "TypeScript"],
@@ -103,10 +107,14 @@ export default function Services() {
             >
               <div className={styles.cardTop}>
                 <span>{service.number}</span>
-                <div className={styles.iconGlow} />
+
+                <div className={styles.iconGlow}>
+                  <span>{service.icon}</span>
+                </div>
               </div>
 
               <h3>{service.title}</h3>
+
               <p>{service.text}</p>
 
               <div className={styles.tags}>
