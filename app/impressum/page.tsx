@@ -32,9 +32,9 @@ export default function ImpressumPage() {
                 <br />
                 Djezi Zenki
                 <br />
-                Musterstraße 1
+                Konrad-Engelhardt-Straße 3
                 <br />
-                12345 Musterstadt
+                82131 Gauting
                 <br />
                 Deutschland
               </p>
@@ -55,9 +55,9 @@ export default function ImpressumPage() {
               <p>
                 Djezi Zenki
                 <br />
-                Musterstraße 1
+                Konrad-Engelhardt-Straße 3
                 <br />
-                12345 Musterstadt
+                82131 Gauting
               </p>
             </div>
 

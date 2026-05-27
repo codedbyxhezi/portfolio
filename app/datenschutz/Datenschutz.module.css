@@ -84,3 +84,28 @@
     padding-top: 100px;
   }
 }
+
+@media (max-width: 560px) {
+  .hero {
+    padding-top: 100px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.25rem, 13vw, 3.2rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .card,
+  .notice {
+    padding: 24px;
+    border-radius: 26px;
+  }
+}

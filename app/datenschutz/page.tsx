@@ -42,9 +42,9 @@ export default function DatenschutzPage() {
                 <br />
                 Djezi Zenki
                 <br />
-                Musterstraße 1
+                Konrad-Engelhardt-Straße 3
                 <br />
-                12345 Musterstadt
+                82131 Gauting
                 <br />
                 E-Mail:{" "}
                 <a href="mailto:djezi.zenki@outlook.de">
