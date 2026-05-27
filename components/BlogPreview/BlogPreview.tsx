@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./BlogPreview.module.css";
@@ -30,25 +30,18 @@ const posts = [
 ];
 
 export default function BlogPreview() {
-  const carouselRef = useRef<HTMLDivElement | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  function scrollCarousel(direction: "left" | "right") {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const firstSlide = carousel.querySelector<HTMLElement>(
-      `.${styles.slideItem}`
+  function goToPrevious() {
+    setActiveIndex((current) =>
+      current === 0 ? posts.length - 1 : current - 1
     );
+  }
 
-    if (!firstSlide) return;
-
-    const gap = 16;
-    const slideWidth = firstSlide.offsetWidth + gap;
-
-    carousel.scrollBy({
-      left: direction === "right" ? slideWidth : -slideWidth,
-      behavior: "smooth",
-    });
+  function goToNext() {
+    setActiveIndex((current) =>
+      current === posts.length - 1 ? 0 : current + 1
+    );
   }
 
   return (
@@ -84,11 +77,16 @@ export default function BlogPreview() {
       </div>
 
       <div className={`container ${styles.carouselWrap}`}>
-        <div ref={carouselRef} className={styles.grid}>
+        <div className={styles.grid}>
           {posts.map((post, index) => (
             <motion.article
               key={post.title}
-              className={`${styles.card} ${styles.slideItem}`}
+              className={styles.card}
+              style={
+                {
+                  "--mobile-slide": activeIndex,
+                } as React.CSSProperties
+              }
               initial={{ opacity: 0, y: 34 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
@@ -118,15 +116,27 @@ export default function BlogPreview() {
         <div className={styles.carouselControls}>
           <button
             type="button"
-            onClick={() => scrollCarousel("left")}
+            onClick={goToPrevious}
             aria-label="Vorherigen Blogartikel anzeigen"
           >
             ←
           </button>
 
+          <div className={styles.dots}>
+            {posts.map((post, index) => (
+              <button
+                key={post.title}
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                className={activeIndex === index ? styles.activeDot : ""}
+                aria-label={`Blogartikel ${index + 1} anzeigen`}
+              />
+            ))}
+          </div>
+
           <button
             type="button"
-            onClick={() => scrollCarousel("right")}
+            onClick={goToNext}
             aria-label="Nächsten Blogartikel anzeigen"
           >
             →
