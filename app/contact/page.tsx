@@ -18,15 +18,15 @@ const contactCards = [
     href: "mailto:djezi.zenki@outlook.de",
   },
   {
+    title: "Anrufen",
+    text: "Direkt telefonisch Kontakt aufnehmen.",
+    value: "+49 178 1532789",
+    href: "tel:+491781532789",
+  },
+  {
     title: "Projektanfrage",
     text: "Für Websites, Landing Pages und Weblösungen.",
     value: "Projekt starten",
-    href: "#contact",
-  },
-  {
-    title: "Antwortzeit",
-    text: "Wir melden uns so schnell wie möglich zurück.",
-    value: "Schnelle Rückmeldung",
     href: "#contact",
   },
 ];
