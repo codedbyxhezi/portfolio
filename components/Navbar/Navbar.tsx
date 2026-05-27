@@ -12,6 +12,7 @@ const navItems = [
   { label: "Leistungen", href: "/services" },
   { label: "Skills", href: "/skills" },
   { label: "Projekte", href: "/projects" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export default function Navbar() {

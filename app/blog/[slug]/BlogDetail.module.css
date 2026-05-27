@@ -1,0 +1,268 @@
+.page {
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  padding-top: 130px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.13);
+  filter: blur(80px);
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: start;
+}
+
+.heroContent {
+  width: 100%;
+  text-align: center;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  justify-self: start;
+  margin-bottom: 34px;
+  padding: 11px 16px;
+  border-radius: 999px;
+  color: #dbeafe;
+  font-size: 0.9rem;
+  font-weight: 900;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.09),
+      rgba(255, 255, 255, 0.035)
+    ),
+    rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.backLink span {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 10px 26px rgba(56, 189, 248, 0.24);
+}
+
+.backLink:hover {
+  color: white;
+  transform: translateY(-3px);
+  border-color: rgba(56, 189, 248, 0.42);
+}
+
+.meta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.meta span,
+.meta small {
+  display: inline-flex;
+  padding: 9px 13px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.meta span {
+  color: #bae6fd;
+  background: rgba(56, 189, 248, 0.09);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.meta small {
+  color: #dbeafe;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.hero h1 {
+  max-width: 1050px;
+  margin: 0 auto;
+  font-size: clamp(3rem, 7vw, 6.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+}
+
+.hero p {
+  max-width: 820px;
+  margin: 26px auto 0;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.articleSection {
+  padding-top: 40px;
+}
+
+.article {
+  max-width: 940px;
+  display: grid;
+  gap: 22px;
+}
+
+.block,
+.ctaBox {
+  position: relative;
+  overflow: hidden;
+  padding: 32px;
+  border-radius: 34px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.085),
+      rgba(255, 255, 255, 0.03)
+    ),
+    rgba(15, 23, 42, 0.72);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.block::before,
+.ctaBox::before {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  right: -110px;
+  top: -110px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.13);
+  filter: blur(16px);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.block:hover::before,
+.ctaBox:hover::before {
+  opacity: 1;
+}
+
+.block span,
+.block h2,
+.block p,
+.ctaBox span,
+.ctaBox h2,
+.ctaBox p,
+.ctaBox a {
+  position: relative;
+  z-index: 1;
+}
+
+.block span,
+.ctaBox span {
+  display: inline-flex;
+  margin-bottom: 32px;
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.block h2,
+.ctaBox h2 {
+  margin-bottom: 14px;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: -0.05em;
+}
+
+.block p,
+.ctaBox p {
+  color: var(--muted);
+  line-height: 1.85;
+  font-size: 1.05rem;
+}
+
+.ctaBox {
+  text-align: center;
+  margin-top: 18px;
+}
+
+.ctaBox p {
+  max-width: 680px;
+  margin: 0 auto 28px;
+}
+
+.ctaBox a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 23px;
+  border-radius: 999px;
+  color: white;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 18px 45px rgba(56, 189, 248, 0.24);
+  transition: transform 0.2s ease;
+}
+
+.ctaBox a:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 105px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding-top: 95px;
+  }
+
+  .backLink {
+    margin-bottom: 28px;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+  }
+
+  .backLink span {
+    width: 26px;
+    height: 26px;
+  }
+
+  .block,
+  .ctaBox {
+    padding: 24px;
+    border-radius: 28px;
+  }
+}

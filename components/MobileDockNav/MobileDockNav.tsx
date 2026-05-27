@@ -44,6 +44,12 @@ const navItems = [
     href: "/contact",
     icon: "✉",
   },
+  {
+  label: "Blog",
+  description: "Insights & Wissen",
+  href: "/blog",
+  icon: "✎",
+},
 ];
 
 export default function MobileDockNav() {

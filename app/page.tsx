@@ -7,6 +7,7 @@ import Process from "@/components/Process/Process";
 import Trust from "@/components/Trust/Trust";
 import Skills from "@/components/Skills/Skills";
 import Projects from "@/components/Projects/Projects";
+import BlogPreview from "@/components/BlogPreview/BlogPreview";
 import FAQ from "@/components/FAQ/FAQ";
 import Contact from "@/components/Contact/Contact";
 import Footer from "@/components/Footer/Footer";
@@ -30,6 +31,7 @@ export default function HomePage() {
         <Trust />
         <Skills />
         <Projects />
+        <BlogPreview />
         <FAQ />
         <Contact />
       </main>
