@@ -77,16 +77,18 @@ export default function BlogPreview() {
       </div>
 
       <div className={`container ${styles.carouselWrap}`}>
-        <div className={styles.grid}>
+        <div
+          className={styles.grid}
+          style={
+            {
+              "--mobile-slide": activeIndex,
+            } as React.CSSProperties
+          }
+        >
           {posts.map((post, index) => (
             <motion.article
               key={post.title}
               className={styles.card}
-              style={
-                {
-                  "--mobile-slide": activeIndex,
-                } as React.CSSProperties
-              }
               initial={{ opacity: 0, y: 34 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
