@@ -32,6 +32,30 @@
   text-align: center;
 }
 
+.imageSection {
+  padding-top: 42px;
+}
+
+.imageCard {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  border-radius: 38px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.095),
+      rgba(255, 255, 255, 0.035)
+    ),
+    rgba(15, 23, 42, 0.72);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
 .backLink {
   display: inline-flex;
   align-items: center;
@@ -242,11 +266,21 @@
   .hero {
     padding-top: 105px;
   }
+
+  .imageCard {
+    min-height: 380px;
+    border-radius: 30px;
+  }
 }
 
 @media (max-width: 560px) {
   .hero {
     padding-top: 95px;
+  }
+
+  .imageCard {
+    min-height: 260px;
+    border-radius: 26px;
   }
 
   .backLink {

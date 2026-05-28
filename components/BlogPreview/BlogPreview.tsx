@@ -1,46 +1,24 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { blogPosts } from "@/data/blog";
 import styles from "./BlogPreview.module.css";
-
-const posts = [
-  {
-    category: "Webdesign",
-    date: "2025",
-    title: "Warum eine moderne Website mehr ist als nur gutes Aussehen",
-    text: "Eine professionelle Website verbindet Design, Struktur, Performance und klare Nutzerführung.",
-    href: "/blog/moderne-website",
-  },
-  {
-    category: "Business",
-    date: "2025",
-    title: "Was eine gute Business Website können sollte",
-    text: "Von Vertrauen über Inhalte bis zu Kontaktmöglichkeiten — eine Website muss klar führen.",
-    href: "/blog/business-website",
-  },
-  {
-    category: "Performance",
-    date: "2025",
-    title: "Warum schnelle Ladezeiten wichtig für Nutzer und SEO sind",
-    text: "Performance verbessert die Nutzererfahrung und kann helfen, Besucher länger auf der Seite zu halten.",
-    href: "/blog/performance-seo",
-  },
-];
 
 export default function BlogPreview() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   function goToPrevious() {
     setActiveIndex((current) =>
-      current === 0 ? posts.length - 1 : current - 1
+      current === 0 ? blogPosts.length - 1 : current - 1
     );
   }
 
   function goToNext() {
     setActiveIndex((current) =>
-      current === posts.length - 1 ? 0 : current + 1
+      current === blogPosts.length - 1 ? 0 : current + 1
     );
   }
 
@@ -85,7 +63,7 @@ export default function BlogPreview() {
             } as React.CSSProperties
           }
         >
-          {posts.map((post, index) => (
+          {blogPosts.map((post, index) => (
             <motion.article
               key={post.title}
               className={styles.card}
@@ -98,19 +76,31 @@ export default function BlogPreview() {
               }}
               whileHover={{ y: -9 }}
             >
-              <div className={styles.meta}>
-                <span>{post.category}</span>
-                <small>{post.date}</small>
+              <div className={styles.imageWrap}>
+                <Image
+                  src={post.image}
+                  alt={post.imageAlt}
+                  fill
+                  sizes="(max-width: 620px) 100vw, 33vw"
+                  className={styles.image}
+                />
               </div>
 
-              <h3>{post.title}</h3>
+              <div className={styles.cardBody}>
+                <div className={styles.meta}>
+                  <span>{post.category}</span>
+                  <small>{post.date}</small>
+                </div>
 
-              <p>{post.text}</p>
+                <h3>{post.title}</h3>
 
-              <Link href={post.href} className={styles.link}>
-                Artikel lesen
-                <span>→</span>
-              </Link>
+                <p>{post.description}</p>
+
+                <Link href={`/blog/${post.slug}`} className={styles.link}>
+                  Artikel lesen
+                  <span>→</span>
+                </Link>
+              </div>
             </motion.article>
           ))}
         </div>
@@ -125,7 +115,7 @@ export default function BlogPreview() {
           </button>
 
           <div className={styles.dots}>
-            {posts.map((post, index) => (
+            {blogPosts.map((post, index) => (
               <button
                 key={post.title}
                 type="button"

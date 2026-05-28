@@ -5,6 +5,8 @@ export type BlogPost = {
   category: string;
   date: string;
   readTime: string;
+  image: string;
+  imageAlt: string;
   intro: string;
   sections: {
     title: string;
@@ -21,6 +23,9 @@ export const blogPosts: BlogPost[] = [
     category: "Webdesign",
     date: "2025",
     readTime: "4 Min.",
+    image: "/images/blog/moderne-website.png",
+    imageAlt:
+      "Modernes Webdesign mit responsiver Website-Struktur auf einem Bildschirm",
     intro:
       "Eine moderne Website soll nicht nur gut aussehen. Sie muss Vertrauen schaffen, verständlich aufgebaut sein und Besucher schnell zum Ziel führen.",
     sections: [
@@ -46,6 +51,9 @@ export const blogPosts: BlogPost[] = [
     category: "Business",
     date: "2025",
     readTime: "5 Min.",
+    image: "/images/blog/business-website.png",
+    imageAlt:
+      "Business Website Konzept mit klarer Nutzerführung und Kontaktbereich",
     intro:
       "Eine Business Website ist mehr als eine digitale Visitenkarte. Sie soll erklären, Vertrauen schaffen und Besucher zur Kontaktaufnahme führen.",
     sections: [
@@ -71,6 +79,9 @@ export const blogPosts: BlogPost[] = [
     category: "Performance",
     date: "2025",
     readTime: "4 Min.",
+    image: "/images/blog/performance-seo.png",
+    imageAlt:
+      "Website Performance Analyse mit schneller Ladezeit und SEO Optimierung",
     intro:
       "Schnelle Websites fühlen sich professioneller an. Sie verbessern die Nutzererfahrung und können auch für Suchmaschinen ein positives Signal sein.",
     sections: [

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar/Navbar";
@@ -57,12 +58,29 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
             <div className={styles.heroContent}>
               <div className={styles.meta}>
                 <span>{post.category}</span>
-                <small>{post.date} · {post.readTime}</small>
+                <small>
+                  {post.date} · {post.readTime}
+                </small>
               </div>
 
               <h1>{post.title}</h1>
 
               <p>{post.intro}</p>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.imageSection}>
+          <div className="container">
+            <div className={styles.imageCard}>
+              <Image
+                src={post.image}
+                alt={post.imageAlt}
+                fill
+                priority
+                sizes="(max-width: 900px) 100vw, 980px"
+                className={styles.heroImage}
+              />
             </div>
           </div>
         </section>
