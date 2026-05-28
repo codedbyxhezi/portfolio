@@ -22,11 +22,11 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "portfolio-website",
-    title: "Brand Portfolio Website",
+    title: "Zemax Digital Website",
     description:
       "Ein moderner Markenauftritt für ein Digital Web Studio mit klarer Struktur, Animationen und responsivem Design.",
     longDescription:
-      "Für dieses Projekt wurde ein kompletter digitaler Markenauftritt entwickelt. Der Fokus lag auf einer starken Hero Section, klaren Unterseiten, moderner Navigation, animierten Sektionen und einer sauberen Komponentenstruktur. Die Website zeigt Leistungen, Projekte, Skills und Kontaktmöglichkeiten in einem professionellen Gesamtbild.",
+      "Für Zemax Digital wurde ein kompletter digitaler Markenauftritt entwickelt. Der Fokus lag auf einer starken Startseite, klaren Unterseiten, moderner Navigation, Blogbereich, Projektseiten, Kontaktmöglichkeiten und einer sauberen Komponentenstruktur.",
     technologies: ["Next.js", "TypeScript", "CSS Modules", "Framer Motion"],
     demoUrl: "#",
     githubUrl: "#",
@@ -39,75 +39,75 @@ export const projects: Project[] = [
       "Moderner Markenauftritt mit Dark Theme",
       "Responsive Layout für Desktop, Tablet und Mobile",
       "Animierte Sections mit Framer Motion",
-      "Unterseiten für Leistungen, Projekte, Skills und Kontakt",
+      "Unterseiten für Leistungen, Projekte, Skills, Blog und Kontakt",
       "SEO-Grundstruktur mit Sitemap, Robots und Metadaten",
     ],
     caseStudy: {
-      goal: "Ziel war es, einen digitalen Auftritt zu entwickeln, der wie ein modernes Webstudio wirkt und Leistungen, Projekte und Kontaktmöglichkeiten klar präsentiert.",
+      goal: "Ziel war es, einen professionellen Webauftritt für Zemax Digital zu erstellen, der Leistungen, Projekte, Blogartikel und Kontaktmöglichkeiten klar präsentiert.",
       solution:
-        "Die Website wurde mit Next.js, TypeScript und CSS Modules aufgebaut. Animationen, Unterseiten und ein Mobile Dock sorgen für ein modernes Nutzererlebnis.",
+        "Die Website wurde mit Next.js, TypeScript, CSS Modules und Framer Motion aufgebaut. Wiederverwendbare Komponenten, Animationen, Unterseiten und ein Mobile Dock sorgen für ein modernes Nutzererlebnis.",
       result:
-        "Entstanden ist eine responsive, schnelle und visuell starke Website mit sauberer Struktur, Case-Study-Bereichen und professionellem Markenauftritt.",
+        "Entstanden ist eine responsive, schnelle und visuell starke Website mit sauberer Struktur, Blogbereich, Projektseiten und professionellem Markenauftritt.",
     },
   },
   {
-    slug: "task-manager",
-    title: "Task Management Dashboard",
+    slug: "reisebuero-website",
+    title: "Reisebüro Website",
     description:
-      "Ein übersichtliches Dashboard-Konzept zur Organisation von Aufgaben, Status und Fortschritt.",
+      "Eine moderne Reisebüro-Website mit klarer Präsentation von Angeboten, Reisezielen und Kontaktmöglichkeiten.",
     longDescription:
-      "Dieses Projekt zeigt ein modernes Dashboard-Konzept für Aufgabenverwaltung. Ziel war eine klare Oberfläche, die Aufgaben, Statusinformationen und Fortschritt verständlich darstellt. Der Fokus liegt auf strukturierter UI, einfacher Bedienbarkeit und einer modernen Web-App-Anmutung.",
-    technologies: ["React", "TypeScript", "Local Storage"],
-    demoUrl: "#",
+      "Dieses Übungsprojekt zeigt eine moderne Reisebüro-Website, umgesetzt mit Next.js, TypeScript, CSS Modules und Framer Motion. Der Fokus lag auf emotionaler visueller Gestaltung, klaren Angebotsbereichen, responsivem Aufbau und animierten UI-Elementen.",
+    technologies: ["Next.js", "TypeScript", "CSS Modules", "Framer Motion"],
+    demoUrl: "https://bashkim-tours.vercel.app/",
     githubUrl: "#",
-    category: "Web App Concept",
-    accent: "purple",
-    year: "2025",
-    role: "Frontend Development",
-    image: "/images/projects/task-manager.png",
-    features: [
-      "Dashboard-Struktur für Aufgaben und Status",
-      "Übersichtliche Karten und Listenbereiche",
-      "Filterbare Aufgabenlogik als Konzept",
-      "Speicherung über Local Storage möglich",
-      "Responsive Web-App Oberfläche",
-    ],
-    caseStudy: {
-      goal: "Ziel war ein Dashboard-Konzept, das Aufgaben und Fortschritt übersichtlich darstellt und eine klare Bedienung ermöglicht.",
-      solution:
-        "Das Interface wurde in strukturierte Bereiche aufgeteilt: Aufgabenlisten, Statuskarten, Filterlogik und visuelle Fortschrittsbereiche.",
-      result:
-        "Das Ergebnis ist ein modernes Web-App-Konzept mit klarer UI, guter Übersicht und einer Basis, die später funktional erweitert werden kann.",
-    },
-  },
-  {
-    slug: "landing-page",
-    title: "SaaS Landing Page",
-    description:
-      "Eine conversion-orientierte Landing Page für ein digitales Produkt mit starkem Hero und klaren Call-to-Actions.",
-    longDescription:
-      "Diese Landing Page wurde als modernes Marketing-Konzept für ein digitales Produkt entwickelt. Die Seite kombiniert eine starke visuelle Einführung, klare Vorteile, Feature-Bereiche und auffällige Call-to-Actions. Ziel war ein professioneller Aufbau, der Nutzer schnell informiert und zur Kontaktaufnahme oder Aktion führt.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    demoUrl: "#",
-    githubUrl: "#",
-    category: "Landing Page",
+    category: "Business Website",
     accent: "cyan",
     year: "2025",
-    role: "UI Development",
-    image: "/images/projects/landing-page.png",
+    role: "UI Design & Frontend Development",
+    image: "/images/projects/reisebuero-website.png",
     features: [
-      "Starke Hero Section mit klarer Botschaft",
-      "Conversion-orientierte Seitenstruktur",
-      "Feature- und Benefit-Bereiche",
-      "Responsive Umsetzung für alle Geräte",
-      "Schneller und fokussierter Seitenaufbau",
+      "Moderne Hero Section mit Reise-Fokus",
+      "Animierte Bereiche für Reiseziele und Angebote",
+      "Responsive Layout für Desktop, Tablet und Mobile",
+      "Klare Call-to-Actions für Anfragen",
+      "Komponentenbasierte Struktur mit CSS Modules",
     ],
     caseStudy: {
-      goal: "Ziel war eine Landing Page, die ein digitales Produkt klar präsentiert und Nutzer schnell zur gewünschten Aktion führt.",
+      goal: "Ziel war es, eine ansprechende Reisebüro-Website zu entwickeln, die Vertrauen schafft, Angebote übersichtlich präsentiert und Besucher schnell zur Anfrage führt.",
       solution:
-        "Die Seite wurde mit starker Hero Section, klaren Benefits, Feature-Bereichen und auffälligen Call-to-Actions aufgebaut.",
+        "Die Website wurde mit Next.js, TypeScript, CSS Modules und Framer Motion umgesetzt. Klare Sections, wiederverwendbare Komponenten und dezente Animationen sorgen für eine moderne Nutzererfahrung.",
       result:
-        "Entstanden ist eine fokussierte, responsive Landing Page mit moderner Gestaltung und klarer Conversion-Struktur.",
+        "Entstanden ist eine responsive Reisebüro-Website mit professioneller Gestaltung, sauberer technischer Struktur und klarer Präsentation der Inhalte.",
+    },
+  },
+  {
+    slug: "barbershop-website",
+    title: "Barbershop Website",
+    description:
+      "Eine stilvolle Barbershop-Website mit starkem Look, Leistungen, Öffnungszeiten und Kontaktbereich.",
+    longDescription:
+      "Dieses Übungsprojekt zeigt eine moderne Barbershop-Website, umgesetzt mit Next.js, TypeScript, CSS Modules und Framer Motion. Der Fokus lag auf einem markanten visuellen Stil, klarer Leistungsübersicht, responsivem Design und animierten Sektionen.",
+    technologies: ["Next.js", "TypeScript", "CSS Modules", "Framer Motion"],
+    demoUrl: "https://sabos-barbershop.vercel.app/",
+    githubUrl: "#",
+    category: "Local Business Website",
+    accent: "purple",
+    year: "2025",
+    role: "UI Design & Frontend Development",
+    image: "/images/projects/barbershop-website.png",
+    features: [
+      "Starke Hero Section mit lokalem Business-Fokus",
+      "Animierte Leistungsbereiche für Haarschnitt, Bart und Styling",
+      "Öffnungszeiten und Kontaktbereich",
+      "Responsive Umsetzung für mobile Nutzer",
+      "Saubere Komponentenstruktur mit CSS Modules",
+    ],
+    caseStudy: {
+      goal: "Ziel war eine moderne Website für einen Barbershop, die Leistungen klar zeigt, den Markenlook stärkt und Besucher schnell zur Kontaktaufnahme führt.",
+      solution:
+        "Das Projekt wurde mit Next.js, TypeScript, CSS Modules und Framer Motion aufgebaut. Die Seite nutzt klare Komponenten, responsive Layouts und dezente Animationen für einen hochwertigen Eindruck.",
+      result:
+        "Entstanden ist eine stilvolle, mobilefreundliche Barbershop-Website mit professioneller Wirkung, klarer Struktur und moderner technischer Umsetzung.",
     },
   },
 ];

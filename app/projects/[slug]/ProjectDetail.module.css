@@ -170,7 +170,7 @@
 .showcaseCard {
   position: relative;
   overflow: hidden;
-  padding: 14px;
+  padding: 0;
   border-radius: 38px;
   background:
     linear-gradient(
@@ -187,12 +187,13 @@
   position: relative;
   min-height: 620px;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: 38px;
   background: rgba(15, 23, 42, 0.75);
 }
 
 .projectImage {
   object-fit: cover;
+  object-position: top center;
 }
 
 .metaSection {
@@ -412,13 +413,13 @@
   }
 
   .showcaseCard {
-    padding: 10px;
+    padding: 0;
     border-radius: 28px;
   }
 
   .imageWrapper {
     min-height: 280px;
-    border-radius: 22px;
+    border-radius: 28px;
   }
 
   .metaCard,
